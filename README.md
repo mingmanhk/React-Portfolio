@@ -4,8 +4,8 @@
 A professional portfolio page along with github project, linkedin and resume
 
 Repository: 
-    https://github.com/mingmanhk/React-Portfolio/blob/main/src/components/Main.js
-
+    https://github.com/mingmanhk/React-Portfolio
+    
 Deployment:
     https://mingmanhk.github.io/React-Portfolio/
      
