@@ -7,7 +7,7 @@ Repository:
     https://github.com/mingmanhk/React-Portfolio/blob/main/src/components/Main.js
 
 Deployment:
-    https://workout-tracker-express-01.herokuapp.com/
+    https://mingmanhk.github.io/React-Portfolio/
      
 Demo
     <img src="./asset/demo.gif"/>
