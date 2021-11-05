@@ -1,10 +1,9 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function Header() {
   return (
     <footer>
-      <div class="container">
+      <div className="container">
         <p>Thank you.</p>
         <p>Designed by Victor Lam</p>
       </div>
