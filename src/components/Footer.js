@@ -7,7 +7,7 @@ function Footer() {
         <p>Thank you.</p>
         <p>Designed by Victor Lam</p>
         <p>
-          <a href="/React-Portfolio/privacy-policy.html">Privacy Policy</a>
+          <a href="/privacy-policy.html">Privacy Policy</a>
         </p>
       </div>
     </footer>
