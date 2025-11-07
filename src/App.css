@@ -80,8 +80,8 @@ section {
 
 
 .section-shell {
-  width: 100%;
-  margin: 0;
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
   padding: 3rem var(--gutter);
   border-radius: 32px;
   background: var(--surface-solid);
@@ -483,8 +483,8 @@ header {
 
 /* Resume */
 .resume {
-  width: 100%;
-  margin: 0;
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
   padding: 3rem var(--gutter);
   background: linear-gradient(135deg, #fdfdff, #f3f6ff);
   border-radius: 32px;
