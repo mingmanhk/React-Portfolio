@@ -3,62 +3,73 @@ import React from "react";
 const skills = [
   {
     category: "Leadership & Interpersonal",
+    summary:
+      "Guides distributed teams with calm communication, clear rituals, and a playbook mindset.",
     items: [
       "Leadership",
       "Adaptability",
-      "Communication",
       "Strategic Thinking",
+      "Executive Storytelling",
       "Time Management",
-      "Distributed Team Management",
-    ],
+      "Distributed Team Management"
+    ]
   },
   {
     category: "Technical Expertise",
+    summary:
+      "Full-stack view across cybersecurity, infrastructure, automation, and product delivery.",
     items: [
       "Cybersecurity",
       "Cloud Computing (AWS, Azure)",
-      "IT Infrastructure Management",
-      "ERP Systems Knowledge",
-      "Network Management",
-      "Cybersecurity Compliance",
-      "ITIL Frameworks",
-      "Service Management Tools",
-    ],
+      "IT Infrastructure",
+      "ERP & SaaS platforms",
+      "Network Engineering",
+      "Compliance & Governance",
+      "ITIL Service Design",
+      "ServiceNow · Jira · Freshworks"
+    ]
   },
   {
-    category: "Operations & Project Management",
+    category: "Operations & Delivery",
+    summary:
+      "Turns complex programs into steady operating rhythms with measurable, people-first outcomes.",
     items: [
-      "Project Management (Agile, PMP)",
-      "IT Operations Management",
-      "Vendor Management",
-      "IT Support Management",
-      "Asset Lifecycle Management",
+      "Agile & PMP Programs",
+      "Vendor Partnerships",
+      "IT Support Leadership",
+      "Asset Lifecycle",
       "Budget Management",
       "Policy Development",
-      "Continuous Improvement",
-    ],
-  },
+      "Continuous Improvement"
+    ]
+  }
 ];
 
 function Experience() {
   return (
-    <section id="experience" className="experience">
-      <div className="container">
-        <div className="section-title">
-          <h2>Skills</h2>
-        </div>
-        <div className="row skills-content">
-          {skills.map((skillCategory, index) => (
-            <div className="col-lg-6" key={index}>
-              <div className="skill-category">
-                <h3 className="skill-category-title">{skillCategory.category}</h3>
-                {skillCategory.items.map((skill, i) => (
-                  <span className="skill-tag" key={i}>{skill}</span>
-                ))}
-              </div>
+    <section id="experience" className="section-shell experience">
+      <div className="section-heading">
+        <p className="eyebrow">Core Capabilities</p>
+        <h2>A balanced toolkit spanning strategy, technology, and delivery.</h2>
+        <p>
+          Every initiative blends resilient architecture with thoughtful stakeholder experiences.
+          Here&apos;s how I approach the work.
+        </p>
+      </div>
+      <div className="experience-grid">
+        {skills.map((skillCategory) => (
+          <article className="skill-card" key={skillCategory.category}>
+            <div className="skill-card__header">
+              <h3>{skillCategory.category}</h3>
+              <p>{skillCategory.summary}</p>
             </div>
-          ))}
-        </div>
+            <div className="skill-tags" aria-label={skillCategory.category}>
+              {skillCategory.items.map((skill) => (
+                <span className="skill-tag" key={skill}>{skill}</span>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

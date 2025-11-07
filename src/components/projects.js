@@ -15,8 +15,8 @@ const projects = [
   {
     name: "DeepTicker",
     project: "https://github.com/mingmanhk/DeepTicker",
-    deployment: "https://deepticker.herokuapp.com/",
-    img: "https://github.com/mingmanhk/DeepTicker/raw/main/client/public/demo.gif",
+    deployment: "https://github.com/mingmanhk/DeepTicker",
+    img: "https://github.com/mingmanhk/DeepTicker/raw/master/Screenshots/Screenshot%20-%20My%20Investment.png",
     alt: "DeepTicker",
     summary:
       "A stock search app that allows users to search for a stock, view its performance, and save it to their watchlist. Built using React, GraphQL, Apollo, Chart.js, and Material-UI.",

@@ -2,60 +2,56 @@ import React from "react";
 
 export default function List({ projects }) {
   return (
-    <section id="portfolio" className="portfolio section-bg">
-      <div className="container">
-        <div className="section-title">
-          <h2>Portfolio</h2>
-        </div>
-        <div class="row">
-          {projects.map((project) => (
-            <div class="col-12 col-md-5">
-              <div class="portfolio-wrap">
-                <h4 class="title">
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={`${project.project}`}
-                  >
-                    {project.name}
-                  </a>
-                </h4>
-                <h6>
-                  Github link:{" "}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={`${project.project}`}
-                  >
-                    {project.project}
-                  </a>
-                </h6>
-                <h6>
-                  Deployment link:{" "}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={`${project.deployment}`}
-                  >
-                    {project.deployment}
-                  </a>
-                </h6>
-                <h6>Summary: {project.summary}</h6>
+    <section id="projects" className="section-shell portfolio">
+      <div className="section-heading">
+        <p className="eyebrow">Selected Projects</p>
+        <h2>Products and platforms that merge usability with measurable value.</h2>
+        <p>
+          Each build leans on modern stacks, thoughtful UX, and close collaboration across
+          design, engineering, and operations.
+        </p>
+      </div>
+
+      <div className="portfolio-grid">
+        {projects.map((project) => (
+          <article className="project-card" key={project.name}>
+            <div className="project-card__media">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.deployment || project.project}
+              >
+                <img src={project.img} alt={project.alt} loading="lazy" />
+              </a>
+            </div>
+            <div className="project-card__body">
+              <h3>{project.name}</h3>
+              <p>{project.summary}</p>
+              <div className="project-links">
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={`${project.deployment}`}
+                  href={project.project}
+                  className="project-link"
                 >
-                  <img
-                    src={`${project.img}`}
-                    class="img-fluid"
-                    alt={`${project.alt}`}
-                  ></img>
+                  <i className="bi bi-github"></i>
+                  Code
                 </a>
+                {project.deployment && (
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={project.deployment}
+                    className="project-link"
+                  >
+                    <i className="bi bi-box-arrow-up-right"></i>
+                    Launch
+                  </a>
+                )}
               </div>
             </div>
-          ))}
-        </div>
+          </article>
+        ))}
       </div>
     </section>
   );
