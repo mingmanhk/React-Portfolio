@@ -42,7 +42,7 @@ const skills = [
 
 function Experience() {
   return (
-    <section id="experience" className="experience">
+    <section id="experience" className="experience" data-aos="fade-up">
       <div className="container">
         <div className="section-title">
           <h2>Skills</h2>
