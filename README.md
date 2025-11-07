@@ -1,57 +1,64 @@
 # React Portfolio for Victor Lam
 
-This is a personal portfolio website for Victor Lam, created with Create React App. It showcases professional experience, education, and personal projects.
+A modern single-page portfolio for Victor Lam powered by React 18 + Vite. It highlights leadership experience, project work, and contact information with a cinematic hero, glassmorphism-inspired cards, and responsive layouts.
 
 ## Live Site
 
-You can view the deployed portfolio here: [https://mingmanhk.github.io/React-Portfolio/](https://mingmanhk.github.io/React-Portfolio/)
+Visit the production build: **[https://mingmanhk.github.io/React-Portfolio/](https://mingmanhk.github.io/React-Portfolio/)**
 
-## Features
+## Highlights
 
-- **Single Page Application:** Smooth, fast navigation without page reloads.
-- **Responsive Design:** Adapts to different screen sizes, from mobile devices to desktops.
-- **Dynamic Sections:** Includes sections for About, Resume (Education & Experience), and Projects.
-- **Analytics:** Integrated with Google Analytics to track user engagement.
+- **Hero + Storytelling:** Animated typed headline, career metrics, and actionable CTAs.
+- **Modular Sections:** Summary, skills, resume timeline, portfolio grid, and contact tiles are all component-driven.
+- **Responsive Design System:** Shared tokens for typography/colors plus Bootstrap utilities ensure consistency across breakpoints.
+- **SEO & Analytics:** Includes structured meta tags, `ads.txt`, AdSense snippet, and Google Analytics.
+- **Fast Tooling:** Vite dev server for instant HMR, production build optimized for static hosting or Vercel.
 
 ## Tech Stack
 
-- **React:** Core library for building the user interface.
-- **React Scripts:** Standard scripts and configuration for Create React App.
-- **Bootstrap & React-Bootstrap:** For layout and responsive design.
-- **Bootstrap Icons:** For iconography.
-- **gh-pages:** For easy deployment to GitHub Pages.
+- [React 18](https://reactjs.org/) with functional components and hooks.
+- [Vite 5](https://vitejs.dev/) for bundling, dev server, and build output (`dist/`).
+- [Bootstrap 5](https://getbootstrap.com/) + [Bootstrap Icons](https://icons.getbootstrap.com/) for layout and iconography.
+- [gh-pages](https://www.npmjs.com/package/gh-pages) for GitHub Pages deployment.
+- Optional hosting via Vercel using `vercel.json` (build command + `dist` output directory).
 
 ## Getting Started
 
-To get a local copy up and running, follow these simple steps.
-
 ### Prerequisites
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+- **Node.js 18+** (Vite 5 requires ≥18.0.0)
+- npm 9+
 
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/mingmanhk/React-Portfolio.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Start the development server
-   ```sh
-   npm start -- --openssl-legacy-provider
-   ```
-   The application will be available at `http://localhost:3000`.
-
-### Deployment
-
-This project uses `gh-pages` to deploy to GitHub Pages. To deploy your version, run:
+### Installation & Development
 
 ```sh
-npm run deploy
+git clone https://github.com/mingmanhk/React-Portfolio.git
+cd React-Portfolio
+npm install
+npm run dev
 ```
+
+Visit `http://localhost:5173` (or the port shown in the CLI). Hot Module Replacement is enabled by default.
+
+### Useful Scripts
+
+| Command            | Description                                      |
+| ------------------ | ------------------------------------------------ |
+| `npm run dev`      | Start Vite dev server with HMR.                  |
+| `npm run build`    | Create an optimized production build in `dist`.  |
+| `npm run preview`  | Preview the production bundle locally.           |
+| `npm run deploy`   | Publish `dist/` to the `gh-pages` branch.        |
+
+### Deployment Notes
+
+- **GitHub Pages:** `npm run deploy` builds and pushes `dist/` to GitHub Pages (configured for `https://mingmanhk.github.io/React-Portfolio/`).
+- **Vercel or other hosts:** Use the included `vercel.json` or configure your platform to run `npm run build` and serve the `dist/` directory.
+
+## Customization Tips
+
+- Update `src/components/projects.js` to add/edit portfolio items (name, links, summary, imagery).
+- Modify hero stats/strings in `src/intro.js`.
+- Edit design tokens in `src/App.css` for branding changes (fonts, colors, spacing).
+- Add new sections by composing components and wiring them up in `src/App.js`.
+
+Feel free to fork and adapt the portfolio to your own story—just keep Node 18+ in mind for Vite compatibility.

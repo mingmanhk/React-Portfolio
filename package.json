@@ -3,18 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "@testing-library/jest-dom": "^6.5.0",
-    "@testing-library/react": "^16.0.0",
-    "@testing-library/user-event": "^14.5.2",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "gh-pages": "^6.1.1",
     "react": "^18.3.1",
-    "react-bootstrap": "^2.10.2",
     "react-dom": "^18.3.1",
-    "typed.js": "^2.0.12",
-    "web-vitals": "^4.2.4"
+    "typed.js": "^2.0.12"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.3",
