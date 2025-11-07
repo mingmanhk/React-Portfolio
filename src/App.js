@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "./components/Header.js";
 import About from "./components/about.js";
 import Intro from "./intro.js";
