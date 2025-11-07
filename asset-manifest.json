@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/React-Portfolio/static/css/main.14161cc0.chunk.css",
-    "main.js": "/React-Portfolio/static/js/main.10ee8c8b.chunk.js",
-    "main.js.map": "/React-Portfolio/static/js/main.10ee8c8b.chunk.js.map",
+    "main.js": "/React-Portfolio/static/js/main.fbda8c9a.chunk.js",
+    "main.js.map": "/React-Portfolio/static/js/main.fbda8c9a.chunk.js.map",
     "runtime-main.js": "/React-Portfolio/static/js/runtime-main.c2e77b81.js",
     "runtime-main.js.map": "/React-Portfolio/static/js/runtime-main.c2e77b81.js.map",
     "static/css/2.433784a4.chunk.css": "/React-Portfolio/static/css/2.433784a4.chunk.css",
@@ -13,6 +13,8 @@
     "static/css/main.14161cc0.chunk.css.map": "/React-Portfolio/static/css/main.14161cc0.chunk.css.map",
     "static/js/2.faab702c.chunk.js.LICENSE.txt": "/React-Portfolio/static/js/2.faab702c.chunk.js.LICENSE.txt",
     "static/media/App.css": "/React-Portfolio/static/media/Me-Background.8968e2c7.jpeg",
+    "static/media/Pixel Color Pick.3c3cc129.png": "/React-Portfolio/static/media/Pixel Color Pick.3c3cc129.png",
+    "static/media/Taskin.99c26620.png": "/React-Portfolio/static/media/Taskin.99c26620.png",
     "static/media/Victor_Lam.3a85c685.jpg": "/React-Portfolio/static/media/Victor_Lam.3a85c685.jpg",
     "static/media/bootstrap-icons.css": "/React-Portfolio/static/media/bootstrap-icons.7165e5d7.woff"
   },
@@ -21,6 +23,6 @@
     "static/css/2.433784a4.chunk.css",
     "static/js/2.faab702c.chunk.js",
     "static/css/main.14161cc0.chunk.css",
-    "static/js/main.10ee8c8b.chunk.js"
+    "static/js/main.fbda8c9a.chunk.js"
   ]
 }
