@@ -135,6 +135,16 @@ header .profile .social-links a:hover {
   margin-left: 300px;
 }
 
+#intro:before {
+  content: "";
+  background: rgba(5, 13, 24, 0.5); /* Darker overlay */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 #intro .intro-container {
   position: relative;
   z-index: 2;
