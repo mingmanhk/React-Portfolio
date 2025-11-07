@@ -2,12 +2,12 @@ import React from "react";
 import imgVictorLam from "../assets/Victor_Lam.jpg";
 
 // In Navbar, we can assign a style from an object by using curly braces
-function Profile() {
+function Profile({ theme, toggleTheme }) {
   return (
     <div className="profile">
       <img
         src={imgVictorLam}
-        alt=""
+        alt="Victor Lam"
         className="img-fluid rounded-circle"
       ></img>
       <h1 className="text-light">
@@ -17,7 +17,7 @@ function Profile() {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/ming-man-lam-25521a33/"
+          href="https://www.linkedin.com/in/mingmanhk"
           className="linkedin"
         >
           <i className="bi bi-linkedin"></i>
@@ -33,11 +33,16 @@ function Profile() {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="assets/Ming Man Lam - Resume - IT Manager 2021.pdf"
+          href="https://media.licdn.com/dms/document/media/v2/D562DAQHUPO_rmHereg/profile-treasury-document-pdf-analyzed/B56ZaXLN39G4Ac-/0/1746293024000?e=1763596800&v=beta&t=x0ZigC2z0vSRt447_LKEcfyXXEvkKZ3ZRboemlwn3G4"
           className="Resume"
-          download
         >
           <i className="bi bi-file-earmark-person"></i>
+        </a>
+        <a href="#!" onClick={toggleTheme} className="theme-toggle">
+          <i
+            className={theme === "light" ? "bi bi-moon" : "bi bi-sun"}
+            title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+          ></i>
         </a>
       </div>
     </div>

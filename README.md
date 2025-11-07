@@ -1,55 +1,57 @@
-[![license](https://img.shields.io/badge/license-MIT-blue)](https://shields.io)
-# Victor Portfolio (React)
-## Description
-A professional portfolio page along with github project, linkedin and resume
+# React Portfolio for Victor Lam
 
-Repository: 
-    https://github.com/mingmanhk/React-Portfolio
-    
-Deployment:
-    https://mingmanhk.github.io/React-Portfolio/
-     
-Demo
-    <img src="./asset/demo.gif"/>
+This is a personal portfolio website for Victor Lam, created with Create React App. It showcases professional experience, education, and personal projects.
 
-## Table of Contents
-1. [Installation](#installation)
+## Live Site
 
-2. [Usage](#usage)
-
-3. [Credits](#credits)
-
-4. [License](#license)
-
-5. [Features](#features)
-
-6. [Contribute](#contribute)
-
-7. [Questions](#questions)
-
-## Installation
-    1. Run npm install to install all dependencies
-    2. Run npm run seed to add sample data
-
-## Usage
-   1. Open terminal
-   2. Run 'npm start'
-   3. Open http://localhost:3000/ from browser
-   
-## Credits
-Victor Lam
-
-## License
-[![license](https://img.shields.io/badge/license-MIT-blue)](https://shields.io)
+You can view the deployed portfolio here: [https://mingmanhk.github.io/React-Portfolio/](https://mingmanhk.github.io/React-Portfolio/)
 
 ## Features
-This application provided following functionality:
 
-    * Using React
-  
-## Contribute
-Victor Lam
+- **Single Page Application:** Smooth, fast navigation without page reloads.
+- **Responsive Design:** Adapts to different screen sizes, from mobile devices to desktops.
+- **Dynamic Sections:** Includes sections for About, Resume (Education & Experience), and Projects.
+- **Analytics:** Integrated with Google Analytics to track user engagement.
 
-## Questions
-Questions about this repository? Please contact me at [mingmanhk@gmail.com](mailto:mingmanhk@gmail.com).
-View more of my work in GitHub at [mingmanhk](https://github.com/mingmanhk)
+## Tech Stack
+
+- **React:** Core library for building the user interface.
+- **React Scripts:** Standard scripts and configuration for Create React App.
+- **Bootstrap & React-Bootstrap:** For layout and responsive design.
+- **Bootstrap Icons:** For iconography.
+- **gh-pages:** For easy deployment to GitHub Pages.
+
+## Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/mingmanhk/React-Portfolio.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Start the development server
+   ```sh
+   npm start -- --openssl-legacy-provider
+   ```
+   The application will be available at `http://localhost:3000`.
+
+### Deployment
+
+This project uses `gh-pages` to deploy to GitHub Pages. To deploy your version, run:
+
+```sh
+npm run deploy
+```

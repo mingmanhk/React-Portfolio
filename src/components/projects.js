@@ -1,10 +1,41 @@
+import pixelColorPickImg from "../assets/Pixel Color Pick.png";
+import taskinImg from "../assets/Taskin.png";
+
 const projects = [
+  {
+    name: "Pixel Color Pick",
+    project: "https://github.com/mingmanhk/PixelColorPick",
+    deployment:
+      "https://apps.apple.com/us/app/pixel-color-pick/id6754412788?mt=12",
+    img: pixelColorPickImg,
+    alt: "Pixel Color Pick",
+    summary:
+      "A simple color picker for your screen. Built using Electron, React, Redux, and Material-UI.",
+  },
+  {
+    name: "DeepTicker",
+    project: "https://github.com/mingmanhk/DeepTicker",
+    deployment: "https://deepticker.herokuapp.com/",
+    img: "https://github.com/mingmanhk/DeepTicker/raw/main/client/public/demo.gif",
+    alt: "DeepTicker",
+    summary:
+      "A stock search app that allows users to search for a stock, view its performance, and save it to their watchlist. Built using React, GraphQL, Apollo, Chart.js, and Material-UI.",
+  },
+  {
+    name: "Taskin",
+    project: "https://github.com/mingmanhk/taskin",
+    deployment: "https://taskin-app.herokuapp.com/",
+    img: taskinImg,
+    alt: "Taskin",
+    summary:
+      "A simple task management app that allows users to create, view, and delete tasks. Built using Node.js, Express, Handlebars, and MySQL.",
+  },
   {
     name: "Habitron",
     project: "https://github.com/xaker00/habitron",
     deployment: "https://habitron-ivs.herokuapp.com/",
     img: "https://github.com/xaker00/habitron/raw/master/image/Home.jpg",
-    alt: "Weather-Dashboard",
+    alt: "Habitron",
     summary:
       "A Habit Tracker keep track of your habits. Built using Materialize, Chart.js, MySQL2, Express, Sequelize, bcrypt, Session, Handlebars and dotenv.",
   },

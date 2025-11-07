@@ -7,12 +7,12 @@ function Navbar() {
       <ul>
         <li>
           <a href="#about" className="nav-link scrollto">
-            <i className="bi bi-person"></i> <span>About</span>
+            <i className="bi bi-person"></i> <span>Summary</span>
           </a>
         </li>
         <li>
           <a href="#experience" className="nav-link scrollto">
-            <i className="bi bi-card-heading"></i> <span>Experience</span>
+            <i className="bi bi-card-heading"></i> <span>Skills</span>
           </a>
         </li>
         <li>
@@ -21,8 +21,8 @@ function Navbar() {
           </a>
         </li>
         <li>
-          <a href="#portfolio" className="nav-link scrollto">
-            <i className="bi bi-stickies"></i> <span>Portfolio</span>
+          <a href="#projects" className="nav-link scrollto">
+            <i className="bi bi-stickies"></i> <span>Projects</span>
           </a>
         </li>
         <li>
