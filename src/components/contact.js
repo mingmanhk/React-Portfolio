@@ -7,11 +7,11 @@ export default function contact() {
         <div className="section-title">
           <h2>Contact</h2>
         </div>
-        <div className="row" data-aos="fade-in">
+        <div className="row">
           <div className="col-12 d-flex align-items-stretch">
             <div className="info">
               <div className="row">
-                <div className="email col-12 col-md-5" data-aos="fade-right">
+                <div className="email col-12 col-md-5">
                   <i className="bi bi-envelope"></i>
                   <h4>Email:</h4>
                   <p>
@@ -20,7 +20,7 @@ export default function contact() {
                     </a>
                   </p>
                 </div>
-                <div className="phone col-12 col-md-5" data-aos="fade-left">
+                <div className="phone col-12 col-md-5">
                   <i className="bi bi-phone"></i>
                   <h4>Call:</h4>
                   <p>+1 832 472 7991</p>

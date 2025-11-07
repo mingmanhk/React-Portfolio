@@ -108,7 +108,7 @@ const Resume = () => {
         </div>
 
         <div className="row">
-          <div className="col-lg-6" data-aos="fade-up">
+          <div className="col-lg-6">
             <h3 className="resume-title">Education</h3>
             {education.map((edu, index) => (
               <div className="resume-item" key={`edu-${index}`}>
@@ -132,7 +132,7 @@ const Resume = () => {
             ))}
           </div>
 
-          <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div className="col-lg-6">
             <h3 className="resume-title">Professional Experience</h3>
             {experience.map((job, index) => (
               <div className="resume-item" key={`exp-${index}`}>

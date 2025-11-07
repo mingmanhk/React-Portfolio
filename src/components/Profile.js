@@ -2,7 +2,7 @@ import React from "react";
 import imgVictorLam from "../assets/Victor_Lam.jpg";
 
 // In Navbar, we can assign a style from an object by using curly braces
-function Profile({ theme, toggleTheme }) {
+function Profile() {
   return (
     <div className="profile">
       <img
@@ -37,12 +37,6 @@ function Profile({ theme, toggleTheme }) {
           className="Resume"
         >
           <i className="bi bi-file-earmark-person"></i>
-        </a>
-        <a href="#!" onClick={toggleTheme} className="theme-toggle">
-          <i
-            className={theme === "light" ? "bi bi-moon" : "bi bi-sun"}
-            title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
-          ></i>
         </a>
       </div>
     </div>

@@ -26,7 +26,7 @@ const Intro = () => {
 
   return (
     <section id="intro" className="d-flex flex-column justify-content-center align-items-center">
-      <div className="intro-container" data-aos="fade-in">
+      <div className="intro-container">
         <h1>Victor Lam</h1>
         <p>I'm a <span className="typed-text" ref={typedElement}></span></p>
       </div>

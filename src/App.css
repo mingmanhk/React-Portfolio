@@ -1,36 +1,20 @@
  :root {
-    --fontcolor-header: #ffffff;
-    --fontcolor-nav: #c5c6c7;
-    --fontcolor-body: #2c3e50;
-    --fontcolor-body-detail: #5a6a7a;
-    --bkcolor-header: #040b14;
-    --bkcolor-body: #ffffff;
-    --bkcolor-body-alt: #f8f9fa;
-    --color-darkblue: #2c3e50;
-    --color-darkblue-rgb: 44, 62, 80;
-    --color-primary: #0d6efd; /* Professional Blue */
-    --bkcolor-body-rgb: 255, 255, 255;
-    --font-default: "Roboto", sans-serif;
-    --font-primary: "Poppins", sans-serif;
-    --font-secondary: "Roboto", sans-serif;
-    --modal-bg: #ffffff;
-    --modal-header-border: #dee2e6;
- }
-
-body.dark-theme {
-    --fontcolor-header: #e9ecef;
-    --fontcolor-nav: #adb5bd;
-    --fontcolor-body: #e9ecef;
-    --fontcolor-body-detail: #adb5bd;
-    --bkcolor-header: #121212;
-    --bkcolor-body: #1e1e1e;
-    --bkcolor-body-alt: #121212;
-    --color-darkblue: #f8f9fa;
-    --color-darkblue-rgb: 248, 249, 250;
-    --color-primary: #3b82f6; /* A slightly brighter blue for dark mode */
-    --bkcolor-body-rgb: 30, 30, 30;
-    --modal-bg: #212529;
-    --modal-header-border: #495057;
+  --fontcolor-header: #ffffff;
+  --fontcolor-nav: #c5c6c7;
+  --fontcolor-body: #212529; /* Darker text for better readability */
+  --fontcolor-body-detail: #495057; /* Slightly lighter for details */
+  --bkcolor-header: #040b14;
+  --bkcolor-body: #ffffff;
+  --bkcolor-body-alt: #f8f9fa; /* Light gray for section backgrounds */
+  --color-darkblue: #0d1b2a; /* A professional dark blue */
+  --color-darkblue-rgb: 13, 27, 42;
+  --color-primary: #007bff; /* Standard Bootstrap primary blue */
+  --bkcolor-body-rgb: 255, 255, 255;
+  --font-default: "Roboto", sans-serif;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
+  --modal-bg: #ffffff;
+  --modal-header-border: #dee2e6;
 }
 
  html {
@@ -38,19 +22,14 @@ body.dark-theme {
  }
  
  body {
-    font-family: var(--font-default);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    color: var(--fontcolor-body);
-    background-color: var(--bkcolor-body-alt);
+  font-family: var(--font-default);
+  color: var(--fontcolor-body);
+  background-color: var(--bkcolor-body-alt);
  }
 
   main {
      margin-left: 300px;
   }
-
-section, .resume .resume-item, .contact .info, .portfolio .portfolio-wrap {
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
 
  
 header {
@@ -154,19 +133,9 @@ header .profile .social-links a:hover {
 /* intro Section*/
 #intro {
   min-height: 100vh;
-  background: url("./assets/Me-Background.jpeg") top center;
+  background: #040b14; /* Simple dark background */
   background-size: cover;
   margin-left: 300px;
-}
-
-#intro:before {
-  background: rgba(5, 13, 24, 0.3);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
 }
 
 #intro .intro-container {

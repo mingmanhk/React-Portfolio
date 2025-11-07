@@ -42,14 +42,14 @@ const skills = [
 
 function Experience() {
   return (
-    <section id="experience" className="experience" data-aos="fade-up">
+    <section id="experience" className="experience">
       <div className="container">
         <div className="section-title">
           <h2>Skills</h2>
         </div>
         <div className="row skills-content">
           {skills.map((skillCategory, index) => (
-            <div className="col-lg-6" data-aos="fade-up" key={index}>
+            <div className="col-lg-6" key={index}>
               <div className="skill-category">
                 <h3 className="skill-category-title">{skillCategory.category}</h3>
                 {skillCategory.items.map((skill, i) => (

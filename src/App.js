@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Header from "./components/Header.js";
 import About from "./components/about.js";
 import Intro from "./intro.js";
 import Projects from "./components/ProjectList.js";
+import projectsData from "./components/projects.js";
 import Experience from "./components/experience.js";
 import Resume from "./components/resume.js";
 import Contact from "./components/contact.js";
@@ -12,39 +11,15 @@ import Footer from "./components/Footer.js";
 import "./App.css";
 
 const App = () => {
-  // State to manage the theme
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false,
-    });
-  }, []);
-
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-
-  // Function to toggle the theme
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-  };
-
-  // Effect to apply the theme class to the body
-  useEffect(() => {
-    document.body.className = `${theme}-theme`;
-  }, [theme]);
-
   return (
     <div>
-      <Header theme={theme} toggleTheme={toggleTheme} />
+      <Header />
       <Intro />
       <main id="main">
         <About />
         <Experience />
         <Resume />
-        <Projects />
+      <Projects projects={projectsData} />
         <Contact />
       </main>
       <Footer />
