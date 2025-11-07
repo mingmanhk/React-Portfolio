@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.a0789ba6.css",
+    "main.css": "/static/css/main.6ba2d5e3.css",
     "main.js": "/static/js/main.60d0c84e.js",
     "static/media/Taskin.png": "/static/media/Taskin.99c26620a4b9a9ff5ae4.png",
     "static/media/Victor_Lam.jpg": "/static/media/Victor_Lam.3a85c68548ac23fecf15.jpg",
@@ -9,11 +9,11 @@
     "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
     "static/media/Me-Background.jpeg": "/static/media/Me-Background.8968e2c7b7eead418329.jpeg",
     "index.html": "/index.html",
-    "main.a0789ba6.css.map": "/static/css/main.a0789ba6.css.map",
+    "main.6ba2d5e3.css.map": "/static/css/main.6ba2d5e3.css.map",
     "main.60d0c84e.js.map": "/static/js/main.60d0c84e.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0789ba6.css",
+    "static/css/main.6ba2d5e3.css",
     "static/js/main.60d0c84e.js"
   ]
 }
