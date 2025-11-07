@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/React-Portfolio/static/css/main.14161cc0.chunk.css",
-    "main.js": "/React-Portfolio/static/js/main.fbda8c9a.chunk.js",
-    "main.js.map": "/React-Portfolio/static/js/main.fbda8c9a.chunk.js.map",
+    "main.css": "/React-Portfolio/static/css/main.c5832fe7.chunk.css",
+    "main.js": "/React-Portfolio/static/js/main.fa4e6eef.chunk.js",
+    "main.js.map": "/React-Portfolio/static/js/main.fa4e6eef.chunk.js.map",
     "runtime-main.js": "/React-Portfolio/static/js/runtime-main.c2e77b81.js",
     "runtime-main.js.map": "/React-Portfolio/static/js/runtime-main.c2e77b81.js.map",
-    "static/css/2.433784a4.chunk.css": "/React-Portfolio/static/css/2.433784a4.chunk.css",
-    "static/js/2.faab702c.chunk.js": "/React-Portfolio/static/js/2.faab702c.chunk.js",
-    "static/js/2.faab702c.chunk.js.map": "/React-Portfolio/static/js/2.faab702c.chunk.js.map",
+    "static/css/2.27422ff6.chunk.css": "/React-Portfolio/static/css/2.27422ff6.chunk.css",
+    "static/js/2.2027cda0.chunk.js": "/React-Portfolio/static/js/2.2027cda0.chunk.js",
+    "static/js/2.2027cda0.chunk.js.map": "/React-Portfolio/static/js/2.2027cda0.chunk.js.map",
     "index.html": "/React-Portfolio/index.html",
-    "static/css/2.433784a4.chunk.css.map": "/React-Portfolio/static/css/2.433784a4.chunk.css.map",
-    "static/css/main.14161cc0.chunk.css.map": "/React-Portfolio/static/css/main.14161cc0.chunk.css.map",
-    "static/js/2.faab702c.chunk.js.LICENSE.txt": "/React-Portfolio/static/js/2.faab702c.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/React-Portfolio/static/media/Me-Background.8968e2c7.jpeg",
+    "static/css/2.27422ff6.chunk.css.map": "/React-Portfolio/static/css/2.27422ff6.chunk.css.map",
+    "static/css/main.c5832fe7.chunk.css.map": "/React-Portfolio/static/css/main.c5832fe7.chunk.css.map",
+    "static/js/2.2027cda0.chunk.js.LICENSE.txt": "/React-Portfolio/static/js/2.2027cda0.chunk.js.LICENSE.txt",
     "static/media/Pixel Color Pick.3c3cc129.png": "/React-Portfolio/static/media/Pixel Color Pick.3c3cc129.png",
     "static/media/Taskin.99c26620.png": "/React-Portfolio/static/media/Taskin.99c26620.png",
     "static/media/Victor_Lam.3a85c685.jpg": "/React-Portfolio/static/media/Victor_Lam.3a85c685.jpg",
@@ -20,9 +19,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.c2e77b81.js",
-    "static/css/2.433784a4.chunk.css",
-    "static/js/2.faab702c.chunk.js",
-    "static/css/main.14161cc0.chunk.css",
-    "static/js/main.fbda8c9a.chunk.js"
+    "static/css/2.27422ff6.chunk.css",
+    "static/js/2.2027cda0.chunk.js",
+    "static/css/main.c5832fe7.chunk.css",
+    "static/js/main.fa4e6eef.chunk.js"
   ]
 }
