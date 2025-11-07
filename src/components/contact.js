@@ -2,12 +2,21 @@ import React from "react";
 
 export default function contact() {
   return (
-    <section id="contact" class
+    <section id="contact" className="contact">
+      <div className="container">
+        <div className="section-title">
+          <h2>Contact</h2>
         </div>
         <div className="row" data-aos="fade-in">
           <div className="col-12 d-flex align-items-stretch">
             <div className="info">
-              <dvw    mingmanhk@gmail.com
+              <div className="row">
+                <div className="email col-12 col-md-5" data-aos="fade-right">
+                  <i className="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>
+                    <a href="mailto:mingmanhk@gmail.com">
+                      mingmanhk@gmail.com
                     </a>
                   </p>
                 </div>
@@ -20,5 +29,7 @@ export default function contact() {
             </div>
           </div>
         </div>
+      </div>
+    </section>
   );
 }
