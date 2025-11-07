@@ -11,7 +11,7 @@ function Profile({ theme, toggleTheme }) {
         className="img-fluid rounded-circle"
       ></img>
       <h1 className="text-light">
-        <a href="index.html">Victor Lam</a>
+        <a href="/">Victor Lam</a>
       </h1>
       <div className="social-links mt-3 text-center">
         <a
