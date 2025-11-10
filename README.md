@@ -26,8 +26,17 @@ Visit the production build: **[https://mingmanhk.github.io/React-Portfolio/](htt
 
 ### Prerequisites
 
-- **Node.js 18+** (Vite 5 requires ≥18.0.0)
-- npm 9+
+- **Node.js 18+ (tested on 25.1.0)** – Vite 5 requires ≥18 and the repo currently targets the latest stable release.
+- npm 9+ (npm 11.6 ships with Node 25)
+
+If you use `nvm`, run the following before installing dependencies to pick up the pinned toolchain:
+
+```sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install 25
+nvm use 25
+```
 
 ### Installation & Development
 
@@ -47,7 +56,7 @@ Visit `http://localhost:5173` (or the port shown in the CLI). Hot Module Replace
 | `npm run dev`      | Start Vite dev server with HMR.                  |
 | `npm run build`    | Create an optimized production build in `dist`.  |
 | `npm run preview`  | Preview the production bundle locally.           |
-| `npm run deploy`   | Publish `dist/` to the `gh-pages` branch.        |
+| `npm run deploy`   | Publish `dist/` to the `gh-pages` branch (requires Node ≥18, tested on 25). |
 
 ### Deployment Notes
 
