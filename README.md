@@ -17,10 +17,10 @@ Visit the production build: **[https://mingmanhk.github.io/React-Portfolio/](htt
 ## Tech Stack
 
 - [React 18](https://reactjs.org/) with functional components and hooks.
-- [Vite 5](https://vitejs.dev/) for bundling, dev server, and build output (`dist/`).
+- [Vite 5](https://vitejs.dev/) for bundling, dev server, and build output (`build/`).
 - [Bootstrap 5](https://getbootstrap.com/) + [Bootstrap Icons](https://icons.getbootstrap.com/) for layout and iconography.
 - [gh-pages](https://www.npmjs.com/package/gh-pages) for GitHub Pages deployment.
-- Optional hosting via Vercel using `vercel.json` (build command + `dist` output directory).
+- Optional hosting via Vercel using `vercel.json` (build command + `build` output directory).
 
 ## Getting Started
 
@@ -54,14 +54,14 @@ Visit `http://localhost:5173` (or the port shown in the CLI). Hot Module Replace
 | Command            | Description                                      |
 | ------------------ | ------------------------------------------------ |
 | `npm run dev`      | Start Vite dev server with HMR.                  |
-| `npm run build`    | Create an optimized production build in `dist`.  |
+| `npm run build`    | Create an optimized production build in `build`. |
 | `npm run preview`  | Preview the production bundle locally.           |
-| `npm run deploy`   | Publish `dist/` to the `gh-pages` branch (requires Node ≥18, tested on 25). |
+| `npm run deploy`   | Publish `build/` to the `gh-pages` branch (requires Node ≥18, tested on 25). |
 
 ### Deployment Notes
 
-- **GitHub Pages:** `npm run deploy` builds and pushes `dist/` to GitHub Pages (configured for `https://mingmanhk.github.io/React-Portfolio/`).
-- **Vercel or other hosts:** Use the included `vercel.json` or configure your platform to run `npm run build` and serve the `dist/` directory.
+- **GitHub Pages:** `npm run deploy` builds and pushes `build/` to GitHub Pages (configured for `https://mingmanhk.github.io/React-Portfolio/`).
+- **Vercel or other hosts:** Use the included `vercel.json` or configure your platform to run `npm run build` and serve the `build/` directory.
 
 ## Customization Tips
 
