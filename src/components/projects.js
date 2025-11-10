@@ -24,7 +24,7 @@ const projects = [
   {
     name: "Taskin",
     project: "https://github.com/mingmanhk/taskin",
-    deployment: "https://taskin-app.herokuapp.com/",
+    deployment: "https://taskin.app/",
     img: taskinImg,
     alt: "Taskin",
     summary:
