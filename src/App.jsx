@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "./components/Header.js";
-import About from "./components/about.js";
+import Header from "./components/Header.jsx";
+import About from "./components/about.jsx";
 import Intro from "./intro.js";
-import Projects from "./components/ProjectList.js";
+import Projects from "./components/ProjectList.jsx";
 import projectsData from "./components/projects.js";
-import Experience from "./components/experience.js";
-import Resume from "./components/resume.js";
-import Contact from "./components/contact.js";
-import Footer from "./components/Footer.js";
+import Experience from "./components/experience.jsx";
+import Resume from "./components/resume.jsx";
+import Contact from "./components/contact.jsx";
+import Footer from "./components/Footer.jsx";
 import "./App.css";
 
 const App = () => {
