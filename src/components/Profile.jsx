@@ -33,7 +33,7 @@ function Profile() {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://media.licdn.com/dms/document/media/v2/D562DAQHUPO_rmHereg/profile-treasury-document-pdf-analyzed/B56ZaXLN39G4Ac-/0/1746293024000?e=1763596800&v=beta&t=x0ZigC2z0vSRt447_LKEcfyXXEvkKZ3ZRboemlwn3G4"
+          href="https://drive.google.com/file/d/1fLUh_lNjaOft6ANH4B1FDgAt1DZQAQsS/view?usp=sharing"
           className="Resume"
         >
           <i className="bi bi-file-earmark-person"></i>
