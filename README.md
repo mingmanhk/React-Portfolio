@@ -1,3 +1,7 @@
+sh
+    git add .
+    ```
+2.  **Commit your changes:**
 # React Portfolio
 
 A modern, single-page portfolio built with React and Vite. This project serves as a template for creating a personal portfolio website with a clean design and smooth animations.
