@@ -20,7 +20,7 @@
     "deploy": "gh-pages -d build",
     "start": "vite",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "test": "echo \"No tests configured\" && exit 0"
   },
