@@ -4,43 +4,43 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://mingmanhk.github.io/React-Portfolio/</loc>
+    <loc>https://victorportfolio.vercel.app/</loc>
     <lastmod>2025-12-08</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://mingmanhk.github.io/React-Portfolio/#about</loc>
+    <loc>https://victorportfolio.vercel.app/#about</loc>
     <lastmod>2025-12-08</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mingmanhk.github.io/React-Portfolio/#experience</loc>
+    <loc>https://victorportfolio.vercel.app/#experience</loc>
     <lastmod>2025-12-08</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mingmanhk.github.io/React-Portfolio/#resume</loc>
+    <loc>https://victorportfolio.vercel.app/#resume</loc>
     <lastmod>2025-12-08</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mingmanhk.github.io/React-Portfolio/#projects</loc>
+    <loc>https://victorportfolio.vercel.app/#projects</loc>
     <lastmod>2025-12-08</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mingmanhk.github.io/React-Portfolio/#contact</loc>
+    <loc>https://victorportfolio.vercel.app/#contact</loc>
     <lastmod>2025-12-08</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mingmanhk.github.io/React-Portfolio/privacy-policy.html</loc>
+    <loc>https://victorportfolio.vercel.app/privacy-policy.html</loc>
     <lastmod>2025-12-08</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
