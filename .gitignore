@@ -113,7 +113,7 @@ dist
 /coverage
 
 # production
-/build
+# /build - Commented out to allow GitHub Pages deployment
 
 # misc
 .DS_Store
