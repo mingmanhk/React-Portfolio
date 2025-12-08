@@ -69,6 +69,8 @@ The optimized files will be generated in the `build` directory.
 
 ### Deployment
 
+#### GitHub Pages
+
 To deploy the portfolio to GitHub Pages, run:
 
 ```sh
@@ -76,6 +78,25 @@ npm run deploy
 ```
 
 This command will build the project and push the `build` directory to the `gh-pages` branch of your repository.
+
+#### Vercel
+
+To deploy to Vercel:
+
+1. **Set the environment variable in Vercel:**
+   - Go to your Vercel dashboard
+   - Navigate to your project settings
+   - Go to "Environment Variables"
+   - Add a new variable:
+     - Name: `VITE_SITE_URL`
+     - Value: Your production URL (e.g., `https://yoursite.vercel.app`)
+   - Save the variable
+
+2. **Deploy:**
+   - Push your changes to GitHub
+   - Vercel will automatically build and deploy
+
+The sitemap and robots.txt will be automatically generated with the correct URL during the build process.
 
 ## Customization
 
