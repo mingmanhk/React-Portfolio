@@ -11,9 +11,13 @@
     "typed.js": "^2.0.12"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "gh-pages": "^6.1.1",
-    "vite": "^5.3.1"
+    "prop-types": "^15.8.1",
+    "vite": "^7.3.0"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -22,6 +26,8 @@
     "dev": "vite",
     "build": "vite build && node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
+    "lint": "eslint src --ext .js,.jsx",
+    "lint:fix": "eslint src --ext .js,.jsx --fix",
     "test": "echo \"No tests configured\" && exit 0"
   },
   "browserslist": {

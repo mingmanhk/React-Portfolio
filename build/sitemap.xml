@@ -4,44 +4,44 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://victorportfolio-2vjd7i17q-mingmanhks-projects.vercel.app/</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://victorportfolio.vercel.app/</loc>
+    <lastmod>2025-12-26</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://victorportfolio-2vjd7i17q-mingmanhks-projects.vercel.app/#about</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://victorportfolio.vercel.app/#about</loc>
+    <lastmod>2025-12-26</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://victorportfolio-2vjd7i17q-mingmanhks-projects.vercel.app/#experience</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://victorportfolio.vercel.app/#experience</loc>
+    <lastmod>2025-12-26</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://victorportfolio-2vjd7i17q-mingmanhks-projects.vercel.app/#resume</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://victorportfolio.vercel.app/#resume</loc>
+    <lastmod>2025-12-26</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://victorportfolio-2vjd7i17q-mingmanhks-projects.vercel.app/#projects</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://victorportfolio.vercel.app/#projects</loc>
+    <lastmod>2025-12-26</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://victorportfolio-2vjd7i17q-mingmanhks-projects.vercel.app/#contact</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://victorportfolio.vercel.app/#contact</loc>
+    <lastmod>2025-12-26</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://victorportfolio-2vjd7i17q-mingmanhks-projects.vercel.app/privacy-policy.html</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://victorportfolio.vercel.app/privacy-policy.html</loc>
+    <lastmod>2025-12-26</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>

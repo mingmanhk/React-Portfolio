@@ -1,4 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
-Sitemap: https://victorportfolio-2vjd7i17q-mingmanhks-projects.vercel.app/sitemap.xml
+Sitemap: https://victorportfolio.vercel.app/sitemap.xml
