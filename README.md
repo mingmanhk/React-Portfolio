@@ -8,7 +8,6 @@ A modern, high-performance portfolio website built with React and Vite, showcasi
 
 ## Live Demo
 
-**Production:** [https://victorportfolio.vercel.app](https://victorportfolio.vercel.app)  
 **GitHub Pages:** [https://mingmanhk.github.io/React-Portfolio/](https://mingmanhk.github.io/React-Portfolio/)
 
 ---
