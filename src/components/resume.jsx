@@ -23,6 +23,19 @@ const certification = [
 
 const experience = [
   {
+    title: "City of Lakewood, Washington | IT Manager",
+    years: "March 2026 - Present",
+    location: "Lakewood, Washington",
+    duties: [
+      "Municipal IT operations for 500+ employees",
+      "Strategic IT roadmaps for city services",
+      "$2M+ technology budget management",
+      "Cloud infrastructure for public services",
+      "Cybersecurity compliance",
+      "Digital transformation leadership"
+    ],
+  },
+  {
     title: "Alibaba Group (U.S.) Inc. | IT Manager",
     years: "May 2018 - Apr 2025",
     location: "Bellevue, WA",
