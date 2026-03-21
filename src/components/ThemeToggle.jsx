@@ -6,11 +6,11 @@ const ThemeToggle = ({ theme, toggleTheme }) => {
     <button
       className="theme-toggle"
       onClick={toggleTheme}
-      aria-label={Switch to  mode}
-      title={Current theme: . Click to switch.}
+      aria-label={"Switch to " + (theme === 'dark' ? 'light' : 'dark') + " mode"}
+      title={"Current theme: " + theme + ". Click to switch."}
     >
       <div className="theme-toggle-container">
-        <div className={	heme-toggle-slider }>
+        <div className="theme-toggle-slider">
           <span className="theme-icon sun" aria-hidden="true">☀️</span>
           <span className="theme-icon moon" aria-hidden="true">🌙</span>
         </div>
