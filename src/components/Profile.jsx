@@ -40,6 +40,26 @@ const Profile = React.memo(() => {
         >
           <i className="bi bi-file-earmark-person" aria-hidden="true"></i>
         </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://taskin.app"
+          className="taskin"
+          aria-label="Visit Taskin.app - Development project management tool"
+          title="Taskin.app - Development Project Management"
+        >
+          <i className="bi bi-list-task" aria-hidden="true"></i>
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://w1it.com"
+          className="w1it"
+          aria-label="Visit W1IT Solutions - IT consulting and managed services"
+          title="W1IT Solutions - IT Consulting & Managed Services"
+        >
+          <i className="bi bi-briefcase-fill" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
   );
