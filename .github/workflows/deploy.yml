@@ -59,3 +59,17 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+
+  # Tell Bing, Yandex, Seznam, and Naver the pages changed, so they recrawl
+  # within hours instead of weeks. The key file is served from public/.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: |
+          KEY=$(cat scripts/.indexnow-key)
+          BASE=https://mingmanhk.github.io/React-Portfolio
+          curl -sS -o /dev/null -w "IndexNow HTTP %{http_code}\n" -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"mingmanhk.github.io\",\"key\":\"$KEY\",\"keyLocation\":\"$BASE/$KEY.txt\",\"urlList\":[\"$BASE/\",\"$BASE/zh-hant/\",\"$BASE/zh-hans/\",\"$BASE/victor-lam-resume.pdf\"]}"

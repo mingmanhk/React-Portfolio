@@ -18,7 +18,7 @@ export default function Hero() {
         <h1 id="hero-title">{person.name}</h1>
         {/* Contact line shown only on paper, where the action buttons are hidden. */}
         <p className="print-only print-contact">
-          {person.email} · linkedin.com/in/mingmanhk · github.com/mingmanhk · {person.website}
+          Seattle, WA · {person.email} · linkedin.com/in/mingmanhk · github.com/mingmanhk · {person.website}
         </p>
         <p className="hero__lede">{person.lede}</p>
         {/* Résumé executive summary: printed and in the PDF, where the hero lede is replaced. */}

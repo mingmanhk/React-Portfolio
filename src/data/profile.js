@@ -1,5 +1,7 @@
 import pixelColorPickImg from "../assets/pixel-color-pick.webp";
 import taskinImg from "../assets/taskin.webp";
+import screenGrabberIcon from "../assets/screengrabber-icon.webp";
+import contactSyncMateIcon from "../assets/contact-syncmate-icon.webp";
 
 export const person = {
   name: "Victor Lam",
@@ -29,7 +31,7 @@ export const pillars = [
     name: "One Login",
     summary:
       "One identity for every employee, secured with strong multi-factor sign-in.",
-    nodes: ["cloud", "hall", "police", "parks", "chambers", "remote"],
+    nodes: ["cloud", "hall", "police", "works", "council", "parks", "remote"],
     links: ["cloud"],
   },
   {
@@ -37,26 +39,27 @@ export const pillars = [
     name: "One Network",
     summary:
       "Every site and remote worker on one managed, monitored network.",
-    nodes: ["hall", "police", "parks", "chambers", "remote"],
-    links: ["hall", "police", "parks", "chambers", "remote"],
+    nodes: ["hall", "police", "works", "council", "parks", "remote"],
+    links: ["hall", "police", "works", "council", "parks", "remote"],
   },
   {
     id: "standard",
     name: "One Standard",
     summary:
       "Shared standards for hardware, support, and licensing so every investment is measurable.",
-    nodes: ["hall", "police", "parks", "chambers"],
+    nodes: ["hall", "police", "works", "council", "parks"],
     links: [],
   },
 ];
 
 export const sites = [
-  { id: "hall", label: "City Hall", x: 96, y: 86 },
-  { id: "police", label: "Police", x: 424, y: 86 },
-  { id: "parks", label: "Parks", x: 74, y: 300 },
-  { id: "chambers", label: "Council Chambers", x: 432, y: 300 },
-  { id: "remote", label: "Remote staff", x: 260, y: 392 },
-  { id: "cloud", label: "Cloud identity", x: 260, y: 30 },
+  { id: "hall", label: "City Hall", x: 110, y: 80 },
+  { id: "police", label: "Police", x: 410, y: 80 },
+  { id: "works", label: "Public Works", x: 58, y: 206 },
+  { id: "council", label: "City Council", x: 462, y: 206 },
+  { id: "parks", label: "Parks", x: 120, y: 330 },
+  { id: "remote", label: "Remote staff", x: 400, y: 330 },
+  { id: "cloud", label: "Cloud identity", x: 260, y: 26 },
 ];
 
 export const highlights = [
@@ -67,8 +70,9 @@ export const highlights = [
 ];
 
 /**
- * Each role opens with a one-line scope. Anchor roles group bullets by theme so a
- * reader sees the shape of the job before the detail; others use a flat list.
+ * Every role uses the same structure: scope line, then up to four themed groups
+ * from one fixed set, always in this order: Strategy and leadership, Security
+ * and infrastructure, Operations and service delivery, Engineering and products.
  */
 export const experience = [
   {
@@ -78,31 +82,25 @@ export const experience = [
     end: "Present",
     location: "Lakewood, WA",
     current: true,
-    scope:
-      "Lead citywide IT strategy, infrastructure modernization, and cybersecurity across City Hall, Police, Parks, and public-facing services.",
+    scope: "Lead citywide IT strategy, infrastructure modernization, and cybersecurity across City Hall, Police, Public Works, Parks, and public-facing services.",
     groups: [
       {
-        theme: "Strategy and governance",
+        theme: "Strategy and leadership",
         duties: [
-          "Drive strategic planning, unified technology standards, and project delivery that align every investment to cost efficiency, operational fit, and regulatory compliance.",
-          "Implement data-driven governance for assets, service desk operations, and licensing to support transparent, defensible budget decisions.",
-        ],
+          "Drive strategic planning, enterprise architecture, unified technology standards, and project portfolio delivery that align every investment to cost efficiency, operational fit, and regulatory compliance.",
+          "Implement data-driven governance for assets, service desk operations, and licensing to support transparent, defensible budget decisions."
+        ]
       },
       {
-        theme: "Security and identity",
+        theme: "Security and infrastructure",
         duties: [
           "Oversee the City’s cybersecurity and compliance program, including access management, monitoring, and data protection.",
           "Lead the City’s identity and access modernization, guided by Zero Trust principles.",
-        ],
-      },
-      {
-        theme: "Infrastructure and resilience",
-        duties: [
           "Manage on-premises and cloud infrastructure for high performance, reliability, and secure connectivity across all departments.",
-          "Reduce virtualization and licensing costs through platform consolidation while improving disaster-recovery resilience for critical systems.",
-        ],
-      },
-    ],
+          "Reduce virtualization and licensing costs through platform consolidation while improving disaster-recovery resilience for critical systems."
+        ]
+      }
+    ]
   },
   {
     org: "FRS Clipper",
@@ -110,32 +108,31 @@ export const experience = [
     start: "Nov 2025",
     end: "Feb 2026",
     location: "Seattle, WA",
-    scope:
-      "Delivered strategic IT consulting for a Seattle-based passenger ferry and travel operator, advising leadership on operations, infrastructure modernization, and security.",
+    scope: "Delivered strategic IT consulting for a Seattle-based passenger ferry and travel operator, advising leadership on operations, infrastructure modernization, and security.",
     groups: [
       {
-        theme: "Strategic advisory and cross-border integration",
+        theme: "Strategy and leadership",
         duties: [
           "Led the integration of U.S. operations with the parent company in Flensburg, Germany, ensuring seamless connectivity and alignment with global standards.",
           "Collaborated with international IT teams and a German developer to keep cross-border projects on schedule and meeting quality expectations.",
-          "Evaluated software, vendor services, and support workflows, developing ITIL-based migration plans with prioritized recommendations for reliability, security, and efficiency.",
-        ],
+          "Evaluated software, vendor services, and support workflows, developing ITIL-based migration plans with prioritized recommendations for reliability, security, and efficiency."
+        ]
       },
       {
-        theme: "Infrastructure modernization",
+        theme: "Security and infrastructure",
         duties: [
           "Rebuilt core infrastructure: Active Directory and domain structure, VMware hosts, file and print services with redesigned shared storage and permissions, and the network (VLANs, routing, firewall policies, segmentation).",
-          "Strengthened identity, access, and security controls aligned with Zero Trust principles.",
-        ],
+          "Strengthened identity, access, and security controls aligned with Zero Trust principles."
+        ]
       },
       {
-        theme: "Operational stability and team enablement",
+        theme: "Operations and service delivery",
         duties: [
           "Provided hands-on technical support and training to Seattle IT staff, improving local capabilities and day-to-day service stability.",
-          "Streamlined support workflows and processes to reduce friction and increase reliability across U.S. operations.",
-        ],
-      },
-    ],
+          "Streamlined support workflows and processes to reduce friction and increase reliability across U.S. operations."
+        ]
+      }
+    ]
   },
   {
     org: "PinkkaMii LLC",
@@ -143,30 +140,29 @@ export const experience = [
     start: "May 2025",
     end: "Present",
     location: "Seattle, WA",
-    scope:
-      "Independent practice building AI-driven security tools and software products, and advising small businesses on IT.",
+    scope: "Independent practice building AI-driven security tools and software products, and advising small businesses on IT.",
     groups: [
       {
-        theme: "AI and security engineering",
-        duties: [
-          "Built an LLM-based threat-prediction model for a NOC dashboard that correlates Checkmk monitoring and SIEM events to surface emerging threats in real time.",
-          "Applied AI and machine learning to scale security monitoring and to measure security posture and risk with repeatable, automated assessments.",
-        ],
-      },
-      {
-        theme: "Products",
-        duties: [
-          "Launched Taskin.app and shipped native macOS apps in Swift and SwiftUI, including ScreenGrabber, Contact SyncMate, and Pixel Color Pick (Mac App Store), plus DeepTicker for iOS.",
-        ],
-      },
-      {
-        theme: "Consulting",
+        theme: "Strategy and leadership",
         duties: [
           "Built and launched W1IT.com, an IT consulting and managed services brand for network architecture, design, and security assessments.",
-          "Advise small businesses on cloud infrastructure, security, and IT operations.",
-        ],
+          "Advise small businesses on cloud infrastructure, security, and IT operations."
+        ]
       },
-    ],
+      {
+        theme: "Security and infrastructure",
+        duties: [
+          "Built an LLM-based threat-prediction model for a NOC dashboard that correlates Checkmk monitoring and SIEM events to surface emerging threats in real time.",
+          "Applied AI and machine learning to scale security monitoring and to measure security posture and risk with repeatable, automated assessments."
+        ]
+      },
+      {
+        theme: "Engineering and products",
+        duties: [
+          "Launched Taskin.app and shipped native macOS apps in Swift and SwiftUI, including ScreenGrabber, Contact SyncMate, and Pixel Color Pick (Mac App Store), plus DeepTicker for iOS."
+        ]
+      }
+    ]
   },
   {
     org: "Alibaba Group (U.S.) Inc.",
@@ -177,30 +173,30 @@ export const experience = [
     scope: "Led Americas IT service operations for 1,000+ users and global asset, procurement, and ITSM programs.",
     groups: [
       {
-        theme: "Service delivery",
-        duties: [
-          "Achieved 99.9%+ user satisfaction and 99% SLA compliance across Windows, macOS, VDI, and mobile through structured escalation and proactive support.",
-          "Rebuilt global ticketing on ITIL and standardized ITSM platforms (ServiceNow, Jira, Freshworks, HP Service Manager, SCSM), refining SLA and KPI frameworks to reduce incident recurrence.",
-          "Cut help desk volume 70% with SOPs, governance libraries, and self-service portals, plus automation and AI chatbots for self-healing workflows.",
-        ],
-      },
-      {
-        theme: "Financial and asset governance",
+        theme: "Strategy and leadership",
         duties: [
           "Halved procurement spend through predictive modeling built with Finance, reaching 95% forecast accuracy and shrinking the inventory footprint.",
           "Reduced vendor costs 30% through contract management, SLA enforcement, performance monitoring, and negotiation.",
-          "Directed global asset lifecycle programs with 100% audit accuracy and zero loss; RFID and BLE automation cut reconciliation time 95% and kept the CMDB accurate in real time.",
-        ],
+          "Built predictive executive dashboards in SQL, Python, Tableau, and Power BI for KPIs, SLA adherence, and total cost of ownership.",
+          "Mentored Tier 1–3 global teams in escalation discipline and technical excellence."
+        ]
       },
       {
-        theme: "Executive support and leadership",
+        theme: "Security and infrastructure",
         duties: [
-          "Built predictive executive dashboards in SQL, Python, Tableau, and Power BI for KPIs, SLA adherence, and total cost of ownership.",
-          "Ran infrastructure refresh cycles for AV, executive meeting rooms, and collaboration tools, and managed executive incident response and root-cause analysis.",
-          "Mentored Tier 1–3 global teams in escalation discipline and technical excellence.",
-        ],
+          "Directed global asset lifecycle programs under IT and cybersecurity policy, with 100% audit accuracy and zero loss; RFID and BLE automation cut reconciliation time 95% and kept the CMDB accurate in real time.",
+          "Ran infrastructure refresh cycles for AV, executive meeting rooms, and collaboration tools, and managed executive incident response and root-cause analysis."
+        ]
       },
-    ],
+      {
+        theme: "Operations and service delivery",
+        duties: [
+          "Achieved 99.9%+ user satisfaction and 99% SLA compliance across Windows, macOS, VDI, and mobile through structured escalation and proactive support.",
+          "Rebuilt global ticketing on ITIL and standardized ITSM platforms (ServiceNow, Jira, Freshworks, HP Service Manager, SCSM), refining SLA and KPI frameworks to reduce incident recurrence.",
+          "Cut help desk volume 70% with SOPs, governance libraries, and self-service portals, plus automation and AI chatbots for self-healing workflows."
+        ]
+      }
+    ]
   },
   {
     org: "Beyondsoft Consulting Inc.",
@@ -208,31 +204,31 @@ export const experience = [
     start: "Jun 2016",
     end: "May 2018",
     location: "Bellevue, WA",
-    scope: "Built IT from the ground up as the company grew from 30 to 500+ users across multi-state offices.",
+    scope: "Built and designed the IT organization from the ground up as the company grew from 30 to 500+ users across multi-state offices.",
     groups: [
       {
-        theme: "Strategy and architecture",
+        theme: "Strategy and leadership",
         duties: [
           "Designed foundational IT standards, policies, support procedures, and enterprise architecture, taking each from first draft to company-wide adoption.",
           "Developed infrastructure roadmaps aligned with business goals, improving performance and disaster resilience across data center and remote offices.",
-          "Championed a cloud-first strategy on VMware, Azure, and AWS, increasing scalability and reducing infrastructure overhead across hybrid environments.",
-        ],
+          "Led IT due diligence and service readiness for 5+ M&A integrations, with compliant onboarding, asset continuity, and alignment to parent-company standards."
+        ]
       },
       {
-        theme: "Mergers and governance",
+        theme: "Security and infrastructure",
         duties: [
-          "Led IT due diligence and service readiness for 5+ M&A integrations, with compliant onboarding, asset continuity, and alignment to parent-company standards.",
-          "Implemented ISO, SOX, SOC, and HIPAA controls and disaster recovery and continuity frameworks, keeping the company audit-ready.",
-        ],
+          "Championed a cloud-first strategy on VMware, Azure, and AWS, increasing scalability and reducing infrastructure overhead across hybrid environments.",
+          "Implemented ISO, SOX, SOC, and HIPAA controls and disaster recovery and continuity frameworks, keeping the company audit-ready."
+        ]
       },
       {
-        theme: "Operations",
+        theme: "Operations and service delivery",
         duties: [
           "Reengineered IT and asset workflows and established monitoring and performance metrics, improving transparency, budget control, and asset visibility.",
-          "Directed cross-functional teams delivering infrastructure upgrades, asset lifecycle programs, and continuity projects on time and in scope.",
-        ],
-      },
-    ],
+          "Directed cross-functional teams delivering infrastructure upgrades, asset lifecycle programs, and continuity projects on time and in scope."
+        ]
+      }
+    ]
   },
   {
     org: "HTC America Inc.",
@@ -240,32 +236,31 @@ export const experience = [
     start: "Apr 2007",
     end: "Jun 2016",
     location: "Seattle, WA",
-    scope:
-      "Directed North American IT operations (service desk, network, systems administration) and regional IT strategy, after rising from engineer to senior manager.",
+    scope: "Rose from MIS Engineer to Senior IT Manager (2013–2016), directing North American IT operations across service desk, network, and systems administration.",
     groups: [
       {
-        theme: "Infrastructure and resilience",
+        theme: "Strategy and leadership",
+        duties: [
+          "Aligned regional infrastructure with global SAP deployments and managed CRM integration with external business partners.",
+          "Delivered software and infrastructure projects on time and in scope, including a Cisco Call Manager 4.0 to 9.0 migration and Expressway videoconferencing."
+        ]
+      },
+      {
+        theme: "Security and infrastructure",
         duties: [
           "Established and ran a U.S. colocation data center, delivering upgrade and migration projects with 100% uptime and zero business disruption.",
           "Led hybrid modernization from on-premises to VMware and Azure, improving scalability, performance, and resilience.",
-          "Wrote enterprise IT policies and disaster recovery and continuity plans that supported ISO certification and audit readiness.",
-        ],
+          "Wrote enterprise IT policies and disaster recovery and continuity plans that supported ISO certification and audit readiness."
+        ]
       },
       {
-        theme: "Enterprise systems and integration",
+        theme: "Engineering and products",
         duties: [
-          "Aligned regional infrastructure with global SAP deployments and managed CRM integration with external business partners.",
           "Designed APIs and tuned SQL performance, reducing database latency and improving reporting accuracy.",
-          "Delivered software and infrastructure projects on time and in scope, including a Cisco Call Manager 4.0 to 9.0 migration and Expressway videoconferencing.",
-        ],
-      },
-      {
-        theme: "Career progression, 2007–2012",
-        duties: [
-          "MIS Engineer, IT Engineer, Software Programmer Analyst, and IT Operations Lead before promotion to Senior IT Manager in 2013; built an enterprise SharePoint 2010 platform, EDI and encrypted data exchange (VB.NET, XML, SFTP, PGP), and SQL Server reporting automation.",
-        ],
-      },
-    ],
+          "Built an enterprise SharePoint 2010 platform, EDI and encrypted data exchange (VB.NET, XML, SFTP, PGP), and SQL Server reporting automation."
+        ]
+      }
+    ]
   },
   {
     org: "Early career",
@@ -273,24 +268,27 @@ export const experience = [
     start: "2006",
     end: "2007",
     location: "Houston, TX",
-    scope:
-      "Software Developer at AxionTech.com (APIs, SQL optimization, software delivery) and technical support at Directron.com (systems consulting and network installation).",
-    duties: [],
-  },
+    scope: "Software Developer at AxionTech.com (APIs, SQL optimization, software delivery) and technical support at Directron.com (systems consulting and network installation).",
+    duties: []
+  }
 ];
 
 export const capabilities = [
   {
     name: "Leadership and strategy",
-    items: ["IT strategy and roadmaps", "Budget, procurement, and vendors", "Policy and governance", "Distributed team leadership"],
+    items: ["IT strategy and multi-year roadmaps", "Program and portfolio management", "People leadership and org design", "Procurement strategy and vendor management"],
   },
   {
-    name: "Security and governance",
-    items: ["Zero Trust identity and access", "SIEM, monitoring, threat detection", "ISO, SOX, SOC, HIPAA controls", "Risk assessment and audit readiness"],
+    name: "Enterprise architecture and governance",
+    items: ["Enterprise and solution architecture", "Technology standards and IT governance", "Data governance", "IT financial management"],
   },
   {
-    name: "Infrastructure and cloud",
-    items: ["Hybrid on-premises and cloud", "Microsoft 365 and Entra ID", "AWS, Azure, and VMware", "Disaster recovery and continuity"],
+    name: "Security and risk",
+    items: ["Cybersecurity architecture and Zero Trust", "SIEM, monitoring, and threat detection", "ISO, SOX, SOC, HIPAA controls", "Risk assessment and audit readiness"],
+  },
+  {
+    name: "Infrastructure and resilience",
+    items: ["Hybrid cloud: AWS, Azure, VMware", "Microsoft 365 and Entra ID", "Network architecture", "Business continuity and disaster recovery"],
   },
   {
     name: "Service delivery and operations",
@@ -330,12 +328,16 @@ export const projects = [
     name: "ScreenGrabber",
     type: "product",
     summary: "A native macOS screen capture app, built with Swift and SwiftUI and sold through Taskin.",
+    img: screenGrabberIcon,
+    icon: true,
     live: { href: "https://taskin.app/", label: "taskin.app" },
   },
   {
     name: "Contact SyncMate",
     type: "product",
     summary: "A native macOS app for keeping contacts in sync, built with Swift and SwiftUI and sold through Taskin.",
+    img: contactSyncMateIcon,
+    icon: true,
     live: { href: "https://taskin.app/", label: "taskin.app" },
   },
   {

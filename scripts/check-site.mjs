@@ -46,7 +46,7 @@ try {
     await new Promise((r) => setTimeout(r, 250));
   }
 
-  for (const file of ["victor-lam-resume.pdf", "sitemap.xml", "privacy-policy.html", "social-share-image.jpg", "zh-hant/", "zh-hans/"]) {
+  for (const file of ["victor-lam-resume.pdf", "sitemap.xml", "privacy-policy.html", "social-share-image.jpg", "zh-hant/", "zh-hans/", "llms.txt"]) {
     const res = await fetch(base + file);
     check(res.ok, `serves ${file}`, String(res.status));
   }

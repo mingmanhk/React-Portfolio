@@ -674,6 +674,10 @@ main > section {
   color: var(--muted);
 }
 
+.role__loc {
+  white-space: nowrap;
+}
+
 .role__chevron {
   margin-top: 0.35rem;
   color: var(--muted);
@@ -861,6 +865,20 @@ main > section {
   height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+.project__media--icon {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--evergreen-soft), var(--surface));
+}
+
+.project__media--icon img {
+  width: auto;
+  height: 78%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgb(40 30 120 / 0.25));
 }
 
 .project__placeholder {
@@ -1051,7 +1069,7 @@ main > section {
 ------------------------------------------------------------------- */
 @page {
   size: letter;
-  margin: 0.45in 0.55in;
+  margin: 0.4in 0.5in;
 }
 
 @media print {
@@ -1144,18 +1162,17 @@ main > section {
     display: none;
   }
 
+  /* Visible heading: ATS parsers look for a labelled summary section. */
   .print-summary h2 {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
+    margin: 0.5rem 0 0;
+    font-size: 11pt;
+    color: var(--evergreen);
   }
 
   .print-summary p {
-    margin: 0.35rem 0 0;
+    margin: 0.15rem 0 0;
     font-size: 9.5pt;
-    line-height: 1.45;
+    line-height: 1.4;
   }
 
   .section {
@@ -1181,11 +1198,26 @@ main > section {
     border-bottom: 0;
   }
 
+  /* Employer block: company and dates on line one, title and location on line
+     two, a rule between employers so each job reads as its own section. */
+  .role {
+    padding-top: 0.45rem;
+    margin-top: 0.45rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .role:first-child {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0.1rem;
+  }
+
   .role summary {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     gap: 1rem;
-    padding: 0.35rem 0 0.1rem;
+    padding: 0;
     break-after: avoid;
   }
 
@@ -1196,18 +1228,28 @@ main > section {
   }
 
   .role__head {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0 0.4rem;
+    flex-direction: column;
     padding: 0;
   }
 
   .role__org {
-    font-size: 10.5pt;
+    font-size: 11pt;
+    font-weight: 750;
   }
 
-  .role__title::before {
-    content: "· ";
+  .role__title {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .role__loc {
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .role__when {
+    font-weight: 600;
+    color: var(--ink);
   }
 
   .role__body {
@@ -1231,14 +1273,15 @@ main > section {
   }
 
   .role__scope {
-    margin: 0.05rem 0 0.15rem;
-    font-weight: 500;
-    font-style: italic;
+    margin: 0.15rem 0 0.1rem;
+    font-weight: 400;
+    color: var(--muted);
   }
 
   .role__theme {
-    margin: 0.2rem 0 0;
+    margin: 0.25rem 0 0;
     font-size: 8.5pt;
+    font-weight: 700;
     color: var(--evergreen);
   }
 
@@ -1246,11 +1289,10 @@ main > section {
     margin-top: 0.1rem;
   }
 
-  /* Anchor role: tinted rule and a little more air so it reads first. */
+  /* Same structure for every employer on paper. */
   .role--current .role__body {
-    border-left: 2px solid var(--evergreen);
-    padding-left: 0.6rem;
-    margin-bottom: 0.2rem;
+    border-left: 0;
+    padding-left: 0;
   }
 
   /* Roles may span pages (long roles otherwise leave large gaps); each themed

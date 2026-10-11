@@ -29,12 +29,14 @@ function Role({ job, defaultOpen }) {
           </span>
           <span className="role__head">
             <span className="role__org">{job.org}</span>
-            <span className="role__title">{job.title}</span>
+            <span className="role__title">
+              {job.title}
+              <span className="role__loc"> · {job.location}</span>
+            </span>
           </span>
           <Icon name="chevron" className="role__chevron" size={18} />
         </summary>
         <div className="role__body">
-          <p className="role__location">{job.location}</p>
           <p className="role__scope">{job.scope}</p>
           {job.groups ? (
             job.groups.map((g) => (

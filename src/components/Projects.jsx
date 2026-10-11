@@ -7,13 +7,13 @@ function ProjectCard({ project }) {
   const [imgFailed, setImgFailed] = useState(false);
   return (
     <li className="project">
-      <div className="project__media">
+      <div className={`project__media${project.icon ? " project__media--icon" : ""}`}>
         {imgFailed || !project.img ? (
           <span className="project__placeholder" aria-hidden="true">
             <Icon name="code" size={32} />
           </span>
         ) : (
-          <img src={project.img} alt={ui.screenshot(project.name)} loading="lazy" decoding="async" onError={() => setImgFailed(true)} />
+          <img src={project.img} alt={project.icon ? ui.appIcon(project.name) : ui.screenshot(project.name)} loading="lazy" decoding="async" onError={() => setImgFailed(true)} />
         )}
       </div>
       <div className="project__body">

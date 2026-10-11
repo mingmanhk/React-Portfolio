@@ -1,0 +1,28 @@
+# Victor Lam
+
+> Acting Chief Information Officer / IT Manager at the City of Lakewood, Washington. Public-sector CIO and enterprise IT leader with 18+ years leading enterprise architecture, cybersecurity, infrastructure, and IT operations in the Seattle area.
+
+Personal website. Views are his own and do not represent the City of Lakewood.
+
+## Profile
+- [Portfolio (English)](https://mingmanhk.github.io/React-Portfolio/): experience, skills, projects, contact
+- [繁體中文](https://mingmanhk.github.io/React-Portfolio/zh-hant/)
+- [简体中文](https://mingmanhk.github.io/React-Portfolio/zh-hans/)
+- [Résumé (PDF)](https://mingmanhk.github.io/React-Portfolio/victor-lam-resume.pdf)
+
+## Experience
+- City of Lakewood, WA — Acting Chief Information Officer / IT Manager (Mar 2026–Present)
+- FRS Clipper — IT Consultant (Nov 2025–Feb 2026)
+- PinkkaMii LLC — Founder and IT Consultant (May 2025–Present)
+- Alibaba Group (U.S.) — IT Manager (May 2018–Apr 2025)
+- Beyondsoft Consulting — Senior IT Manager (Jun 2016–May 2018)
+- HTC America — Senior IT Manager (Apr 2007–Jun 2016)
+
+## Core skills
+Enterprise architecture and IT governance; program and portfolio management; procurement strategy and vendor management; cybersecurity architecture and Zero Trust; data governance; IT financial management; business continuity and disaster recovery; people leadership and org design; ITIL service delivery; hybrid cloud (AWS, Azure, VMware); Microsoft 365 and Entra ID.
+
+## Elsewhere
+- [LinkedIn](https://www.linkedin.com/in/mingmanhk)
+- [GitHub](https://github.com/mingmanhk)
+- [W1IT](https://w1it.com)
+- [Taskin](https://taskin.app)

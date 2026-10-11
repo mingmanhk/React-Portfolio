@@ -34,6 +34,12 @@ ${routes.map(route => `  <url>
     <changefreq>${route.changefreq}</changefreq>
 ${alternates.map(([lang, p]) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${BASE_URL}${p}"/>`).join('\n')}
   </url>`).join('\n')}
+  <url>
+    <loc>${BASE_URL}/victor-lam-resume.pdf</loc>
+    <lastmod>${today}</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
 `;
 
