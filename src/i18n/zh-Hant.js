@@ -85,37 +85,57 @@ export default {
     {
       title: "創辦人暨 IT 顧問",
       location: "華盛頓州西雅圖",
-      scope: "獨立顧問公司，提供 IT 顧問服務並開發軟體產品。",
-      duties: [
-        "建立並推出 W1IT.com，專注於網路架構、設計與資安評估的 IT 顧問與代管服務品牌。",
-        "推出 Taskin.app，並以 Swift 與 SwiftUI 開發 Apple 原生 App，包括 Pixel Color Pick（Mac App Store）與 DeepTicker（iOS）。",
-        "為中小企業提供雲端基礎架構、資訊安全與 IT 營運諮詢。",
+      scope: "獨立顧問公司，開發 AI 驅動的資安工具與軟體產品，並為中小企業提供 IT 諮詢。",
+      groups: [
+        {
+          theme: "AI 與資安工程",
+          duties: [
+            "為網路營運中心（NOC）儀表板建立以大型語言模型為基礎的威脅預測模型，整合 Checkmk 監控與 SIEM 事件，即時發現新興威脅。",
+            "運用 AI 與機器學習擴大資安監控規模，並以可重複的自動化評估衡量資安態勢與風險。",
+          ],
+        },
+        {
+          theme: "產品",
+          duties: [
+            "推出 Taskin.app，並以 Swift 與 SwiftUI 開發 macOS 原生 App，包括 ScreenGrabber、Contact SyncMate 與 Pixel Color Pick（Mac App Store），以及 iOS 版 DeepTicker。",
+          ],
+        },
+        {
+          theme: "顧問服務",
+          duties: [
+            "建立並推出 W1IT.com，專注於網路架構、設計與資安評估的 IT 顧問與代管服務品牌。",
+            "為中小企業提供雲端基礎架構、資訊安全與 IT 營運諮詢。",
+          ],
+        },
       ],
     },
     {
       title: "IT 經理",
       location: "華盛頓州貝爾維尤",
-      scope: "領導美洲 IT 服務營運，支援 1,000 名以上使用者，涵蓋 Windows、macOS、虛擬桌面與行動裝置。",
+      scope: "領導美洲 IT 服務營運（1,000 名以上使用者），以及全球資產、採購與 ITSM 計畫。",
       groups: [
         {
           theme: "服務交付",
           duties: [
-            "依 ITIL 重建全球工單系統並優化 SLA 與 KPI 架構，SLA 達成率達 99%。",
-            "透過全球標準作業程序、自助知識庫，以及自動化與 AI 聊天機器人，使服務台工單量減少 70%。",
+            "透過結構化升級流程與主動支援，在 Windows、macOS、虛擬桌面與行動裝置上達成 99.9% 以上使用者滿意度與 99% SLA 達成率。",
+            "依 ITIL 重建全球工單系統並統一 ITSM 平台（ServiceNow、Jira、Freshworks、HP Service Manager、SCSM），優化 SLA 與 KPI 架構，降低事件重複發生。",
+            "透過標準作業程序、治理文件庫與自助入口網站，搭配自動化與 AI 聊天機器人，使服務台工單量減少 70%。",
           ],
         },
         {
           theme: "財務與資產治理",
           duties: [
-            "與財務部門建立採購預測模型，預測準確率 95%，軟硬體支出減半。",
-            "透過廠商績效管理、SLA 執行與談判，降低營運成本 30%。",
-            "執行全球資產生命週期管理，稽核準確率 100%、資產零遺失；導入 RFID 與 BLE 後盤點時間減少 95%。",
+            "與財務部門建立採購預測模型，預測準確率 95%，採購支出減半並縮減庫存。",
+            "透過合約管理、SLA 執行、績效監控與談判，降低廠商成本 30%。",
+            "主導全球資產生命週期管理，稽核準確率 100%、資產零遺失；導入 RFID 與 BLE 自動化後盤點時間減少 95%，CMDB 即時準確。",
           ],
         },
         {
-          theme: "領導",
+          theme: "主管支援與團隊領導",
           duties: [
-            "以 SQL、Python、Tableau 與 Power BI 建立主管 KPI 與總持有成本儀表板，並指導跨區域的一至三線團隊。",
+            "以 SQL、Python、Tableau 與 Power BI 建立主管預測儀表板，追蹤 KPI、SLA 達成率與總持有成本。",
+            "主導影音系統、主管會議室與協作工具的汰換更新，並負責主管層級的事件應變與根本原因分析。",
+            "指導全球一至三線團隊，建立升級處理紀律與技術專業。",
           ],
         },
       ],
@@ -124,40 +144,81 @@ export default {
       title: "資深 IT 經理",
       location: "華盛頓州貝爾維尤",
       scope: "隨公司從 30 人成長至跨州 500 人以上，從零建立 IT 部門。",
-      duties: [
-        "主導 5 次以上併購的 IT 盡職調查與整合，確保資產完整延續。",
-        "以 VMware、Azure 與 AWS 推動雲端優先策略，提升擴充性並降低基礎架構負擔。",
-        "建立 ISO、SOX、SOC 與 HIPAA 合規控制及災難復原架構。",
+      groups: [
+        {
+          theme: "策略與架構",
+          duties: [
+            "設計 IT 標準、政策、支援程序與企業架構，從初稿推動到全公司採用。",
+            "依業務目標制定基礎架構藍圖，提升資料中心與遠端辦公室的效能與災難韌性。",
+            "以 VMware、Azure 與 AWS 推動雲端優先策略，提升混合環境的擴充性並降低基礎架構負擔。",
+          ],
+        },
+        {
+          theme: "併購與治理",
+          duties: [
+            "主導 5 次以上併購的 IT 盡職調查與服務整備，確保合規導入、資產延續並符合母公司標準。",
+            "建立 ISO、SOX、SOC 與 HIPAA 控制及災難復原與營運持續架構，維持隨時可受稽核的狀態。",
+          ],
+        },
+        {
+          theme: "營運",
+          duties: [
+            "改造 IT 與資產流程，建立監控與績效指標，提升透明度、預算控制與資產可視性。",
+            "領導跨部門團隊，準時且如期完成基礎架構升級、資產生命週期與營運持續專案。",
+          ],
+        },
       ],
     },
     {
-      title: "IT 經理（由軟體工程師晉升）",
-      location: "華盛頓州貝爾維尤",
-      scope: "領導北美服務台、網路與系統管理團隊。",
-      duties: [
-        "建置並遷移美國託管資料中心，全程 100% 正常運作、業務零中斷。",
-        "將地端系統遷移至 VMware 與 Azure，並撰寫支持 ISO 認證的災難復原與營運持續計畫。",
-        "開發 API 並調校 SQL，與全球 SAP 團隊完成跨平台資料整合。",
+      title: "資深 IT 經理",
+      location: "華盛頓州西雅圖",
+      scope: "領導北美 IT 營運（服務台、網路、系統管理）與區域 IT 策略，由工程師一路晉升至資深經理。",
+      groups: [
+        {
+          theme: "基礎架構與韌性",
+          duties: [
+            "建立並營運美國託管資料中心，升級與遷移專案全程 100% 正常運作、業務零中斷。",
+            "主導從地端到 VMware 與 Azure 的混合式現代化，提升擴充性、效能與韌性。",
+            "撰寫企業 IT 政策與災難復原及營運持續計畫，支持 ISO 認證與稽核準備。",
+          ],
+        },
+        {
+          theme: "企業系統與整合",
+          duties: [
+            "使區域基礎架構配合全球 SAP 部署，並負責與外部業務夥伴的 CRM 系統整合。",
+            "設計 API 並調校 SQL 效能，降低資料庫延遲並提升報表準確度。",
+            "準時且如期交付軟體與基礎架構專案，包括 Cisco Call Manager 4.0 升級至 9.0 與 Expressway 視訊會議。",
+          ],
+        },
+        {
+          theme: "職涯晉升（2007–2012）",
+          duties: [
+            "歷任 MIS 工程師、IT 工程師、軟體程式分析師與 IT 營運主管，2013 年晉升資深 IT 經理；建置企業 SharePoint 2010 平台、EDI 與加密資料交換（VB.NET、XML、SFTP、PGP），以及 SQL Server 報表自動化。",
+          ],
+        },
       ],
     },
     {
-      title: "全端工程師",
+      org: "早期經歷",
+      title: "AxionTech.com 與 Directron.com",
       location: "德州休士頓",
-      scope: "開發倉儲、訂單與庫存系統的內部網頁應用、PHP 服務與 MySQL 資料庫。",
+      scope: "AxionTech.com 軟體工程師（API、SQL 效能優化、軟體交付）；Directron.com 技術支援（系統諮詢與網路建置）。",
       duties: [],
     },
   ],
   capabilities: [
     { name: "領導與策略", items: ["IT 策略與藍圖", "預算、採購與廠商管理", "政策與治理", "跨地域團隊領導"] },
-    { name: "資安與治理", items: ["零信任身分與存取管理", "ISO、SOX、SOC、HIPAA 控制", "風險與稽核準備", "災難復原與營運持續"] },
-    { name: "基礎架構與雲端", items: ["地端與雲端混合架構", "Microsoft 365 與 Entra ID", "AWS 與 Azure", "虛擬化與網路"] },
+    { name: "資安與治理", items: ["零信任身分與存取管理", "SIEM、監控與威脅偵測", "ISO、SOX、SOC、HIPAA 控制", "風險評估與稽核準備"] },
+    { name: "基礎架構與雲端", items: ["地端與雲端混合架構", "Microsoft 365 與 Entra ID", "AWS、Azure 與 VMware", "災難復原與營運持續"] },
     { name: "服務交付與營運", items: ["ITIL 服務設計", "ServiceNow、Jira、Freshworks", "資產生命週期與 CMDB", "KPI 與 SLA 儀表板"] },
-    { name: "工程與開發", items: ["React 與 Node.js", "Swift 與 SwiftUI", "SQL 與 Python", "API 與系統整合"] },
+    { name: "工程與開發", items: ["AI、機器學習與 LLM 整合", "React 與 Node.js", "Swift 與 SwiftUI", "SQL 與 Python"] },
   ],
   projectTypes: ["全部", "產品", "網頁應用", "後端"],
   projects: [
     "開源的 macOS 取色工具，提供全螢幕滴管、一鍵複製 HEX／RGB／HSL 與顏色歷史。以 Swift 與 SwiftUI 開發。",
-    "免費、免註冊的線上工具箱：QR 碼、去背、圖片壓縮、證件照、檔案轉換與 AI 股票分析。",
+    "我的 Mac App 官方網站，也是免費、免註冊的線上工具箱：QR 碼、去背、圖片壓縮、證件照、檔案轉換與 AI 股票分析。",
+    "以 Swift 與 SwiftUI 開發的 macOS 原生螢幕擷取 App，透過 Taskin 銷售。",
+    "以 Swift 與 SwiftUI 開發的 macOS 原生聯絡人同步 App，透過 Taskin 銷售。",
     "重視隱私的 iOS 投資組合追蹤 App，可自選 AI 模型提供市場分析。以 Swift 與 SwiftUI 開發，資料只存在裝置上。",
     "具圖表與登入功能的習慣追蹤工具，以 Express、Sequelize 與 Handlebars 開發。",
     "以 Express 與 MySQL 開發、採用 MVC 架構並具登入功能的部落格平台。",

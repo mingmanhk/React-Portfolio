@@ -143,11 +143,29 @@ export const experience = [
     start: "May 2025",
     end: "Present",
     location: "Seattle, WA",
-    scope: "Independent practice delivering IT consulting and software products.",
-    duties: [
-      "Built and launched W1IT.com, an IT consulting and managed services brand for network architecture, design, and security assessments.",
-      "Launched Taskin.app and shipped native Apple apps in Swift and SwiftUI, including Pixel Color Pick (Mac App Store) and DeepTicker (iOS).",
-      "Advise small businesses on cloud infrastructure, security, and IT operations.",
+    scope:
+      "Independent practice building AI-driven security tools and software products, and advising small businesses on IT.",
+    groups: [
+      {
+        theme: "AI and security engineering",
+        duties: [
+          "Built an LLM-based threat-prediction model for a NOC dashboard that correlates Checkmk monitoring and SIEM events to surface emerging threats in real time.",
+          "Applied AI and machine learning to scale security monitoring and to measure security posture and risk with repeatable, automated assessments.",
+        ],
+      },
+      {
+        theme: "Products",
+        duties: [
+          "Launched Taskin.app and shipped native macOS apps in Swift and SwiftUI, including ScreenGrabber, Contact SyncMate, and Pixel Color Pick (Mac App Store), plus DeepTicker for iOS.",
+        ],
+      },
+      {
+        theme: "Consulting",
+        duties: [
+          "Built and launched W1IT.com, an IT consulting and managed services brand for network architecture, design, and security assessments.",
+          "Advise small businesses on cloud infrastructure, security, and IT operations.",
+        ],
+      },
     ],
   },
   {
@@ -156,27 +174,30 @@ export const experience = [
     start: "May 2018",
     end: "Apr 2025",
     location: "Bellevue, WA",
-    scope: "Led Americas IT service operations for 1,000+ users across Windows, macOS, virtual desktops, and mobile.",
+    scope: "Led Americas IT service operations for 1,000+ users and global asset, procurement, and ITSM programs.",
     groups: [
       {
         theme: "Service delivery",
         duties: [
-          "Reached 99% SLA compliance by rebuilding global ticketing on ITIL and refining SLA and KPI frameworks.",
-          "Cut help desk volume 70% with global SOPs, a self-service knowledge library, and automation and AI chatbot tools.",
+          "Achieved 99.9%+ user satisfaction and 99% SLA compliance across Windows, macOS, VDI, and mobile through structured escalation and proactive support.",
+          "Rebuilt global ticketing on ITIL and standardized ITSM platforms (ServiceNow, Jira, Freshworks, HP Service Manager, SCSM), refining SLA and KPI frameworks to reduce incident recurrence.",
+          "Cut help desk volume 70% with SOPs, governance libraries, and self-service portals, plus automation and AI chatbots for self-healing workflows.",
         ],
       },
       {
         theme: "Financial and asset governance",
         duties: [
-          "Halved hardware and software spend through predictive procurement built with Finance, at 95% forecast accuracy.",
-          "Reduced operating costs 30% through vendor performance management, SLA enforcement, and negotiation.",
-          "Ran global asset lifecycle programs with 100% audit accuracy and zero asset loss; RFID and BLE tracking cut reconciliation time 95%.",
+          "Halved procurement spend through predictive modeling built with Finance, reaching 95% forecast accuracy and shrinking the inventory footprint.",
+          "Reduced vendor costs 30% through contract management, SLA enforcement, performance monitoring, and negotiation.",
+          "Directed global asset lifecycle programs with 100% audit accuracy and zero loss; RFID and BLE automation cut reconciliation time 95% and kept the CMDB accurate in real time.",
         ],
       },
       {
-        theme: "Leadership",
+        theme: "Executive support and leadership",
         duties: [
-          "Built executive KPI and total-cost-of-ownership dashboards in SQL, Python, Tableau, and Power BI, and mentored Tier 1–3 teams across regions.",
+          "Built predictive executive dashboards in SQL, Python, Tableau, and Power BI for KPIs, SLA adherence, and total cost of ownership.",
+          "Ran infrastructure refresh cycles for AV, executive meeting rooms, and collaboration tools, and managed executive incident response and root-cause analysis.",
+          "Mentored Tier 1–3 global teams in escalation discipline and technical excellence.",
         ],
       },
     ],
@@ -187,33 +208,73 @@ export const experience = [
     start: "Jun 2016",
     end: "May 2018",
     location: "Bellevue, WA",
-    scope: "Built IT from the ground up as the company grew from 30 to 500+ users across multiple states.",
-    duties: [
-      "Led IT due diligence and onboarding for 5+ mergers and acquisitions with full asset continuity.",
-      "Drove a cloud-first strategy on VMware, Azure, and AWS to improve scalability and reduce infrastructure overhead.",
-      "Established ISO, SOX, SOC, and HIPAA compliance controls and disaster recovery frameworks.",
+    scope: "Built IT from the ground up as the company grew from 30 to 500+ users across multi-state offices.",
+    groups: [
+      {
+        theme: "Strategy and architecture",
+        duties: [
+          "Designed foundational IT standards, policies, support procedures, and enterprise architecture, taking each from first draft to company-wide adoption.",
+          "Developed infrastructure roadmaps aligned with business goals, improving performance and disaster resilience across data center and remote offices.",
+          "Championed a cloud-first strategy on VMware, Azure, and AWS, increasing scalability and reducing infrastructure overhead across hybrid environments.",
+        ],
+      },
+      {
+        theme: "Mergers and governance",
+        duties: [
+          "Led IT due diligence and service readiness for 5+ M&A integrations, with compliant onboarding, asset continuity, and alignment to parent-company standards.",
+          "Implemented ISO, SOX, SOC, and HIPAA controls and disaster recovery and continuity frameworks, keeping the company audit-ready.",
+        ],
+      },
+      {
+        theme: "Operations",
+        duties: [
+          "Reengineered IT and asset workflows and established monitoring and performance metrics, improving transparency, budget control, and asset visibility.",
+          "Directed cross-functional teams delivering infrastructure upgrades, asset lifecycle programs, and continuity projects on time and in scope.",
+        ],
+      },
     ],
   },
   {
     org: "HTC America Inc.",
-    title: "IT Manager, promoted from Software Developer",
+    title: "Senior IT Manager",
     start: "Apr 2007",
     end: "Jun 2016",
-    location: "Bellevue, WA",
-    scope: "Led North American service desk, network, and systems administration teams.",
-    duties: [
-      "Built and migrated a U.S. colocation data center with 100% uptime and no business disruption.",
-      "Moved on-premises systems to VMware and Azure, and wrote disaster recovery and continuity plans that supported ISO certification.",
-      "Developed APIs and tuned SQL for cross-platform data integration with global SAP teams.",
+    location: "Seattle, WA",
+    scope:
+      "Directed North American IT operations (service desk, network, systems administration) and regional IT strategy, after rising from engineer to senior manager.",
+    groups: [
+      {
+        theme: "Infrastructure and resilience",
+        duties: [
+          "Established and ran a U.S. colocation data center, delivering upgrade and migration projects with 100% uptime and zero business disruption.",
+          "Led hybrid modernization from on-premises to VMware and Azure, improving scalability, performance, and resilience.",
+          "Wrote enterprise IT policies and disaster recovery and continuity plans that supported ISO certification and audit readiness.",
+        ],
+      },
+      {
+        theme: "Enterprise systems and integration",
+        duties: [
+          "Aligned regional infrastructure with global SAP deployments and managed CRM integration with external business partners.",
+          "Designed APIs and tuned SQL performance, reducing database latency and improving reporting accuracy.",
+          "Delivered software and infrastructure projects on time and in scope, including a Cisco Call Manager 4.0 to 9.0 migration and Expressway videoconferencing.",
+        ],
+      },
+      {
+        theme: "Career progression, 2007–2012",
+        duties: [
+          "MIS Engineer, IT Engineer, Software Programmer Analyst, and IT Operations Lead before promotion to Senior IT Manager in 2013; built an enterprise SharePoint 2010 platform, EDI and encrypted data exchange (VB.NET, XML, SFTP, PGP), and SQL Server reporting automation.",
+        ],
+      },
     ],
   },
   {
-    org: "Directron.com",
-    title: "Full-Stack Developer",
-    start: "Mar 2005",
-    end: "Apr 2007",
+    org: "Early career",
+    title: "AxionTech.com and Directron.com",
+    start: "2006",
+    end: "2007",
     location: "Houston, TX",
-    scope: "Built internal web applications, PHP services, and MySQL databases for warehouse, order, and inventory systems.",
+    scope:
+      "Software Developer at AxionTech.com (APIs, SQL optimization, software delivery) and technical support at Directron.com (systems consulting and network installation).",
     duties: [],
   },
 ];
@@ -225,11 +286,11 @@ export const capabilities = [
   },
   {
     name: "Security and governance",
-    items: ["Zero Trust identity and access", "ISO, SOX, SOC, HIPAA controls", "Risk and audit readiness", "Disaster recovery and continuity"],
+    items: ["Zero Trust identity and access", "SIEM, monitoring, threat detection", "ISO, SOX, SOC, HIPAA controls", "Risk assessment and audit readiness"],
   },
   {
     name: "Infrastructure and cloud",
-    items: ["Hybrid on-premises and cloud", "Microsoft 365 and Entra ID", "AWS and Azure", "Virtualization and networking"],
+    items: ["Hybrid on-premises and cloud", "Microsoft 365 and Entra ID", "AWS, Azure, and VMware", "Disaster recovery and continuity"],
   },
   {
     name: "Service delivery and operations",
@@ -237,7 +298,7 @@ export const capabilities = [
   },
   {
     name: "Engineering and development",
-    items: ["React and Node.js", "Swift and SwiftUI", "SQL and Python", "APIs and integration"],
+    items: ["AI, ML, and LLM integration", "React and Node.js", "Swift and SwiftUI", "SQL and Python"],
   },
 ];
 export const projectTypes = [
@@ -261,9 +322,20 @@ export const projects = [
   {
     name: "Taskin",
     type: "product",
-    summary: "A free online toolkit of no-signup utilities: QR codes, background removal, image compression, passport photos, file conversion, and AI stock analysis.",
+    summary: "Home for my Mac apps and a free, no-signup online toolkit: QR codes, background removal, image compression, passport photos, file conversion, and AI stock analysis.",
     img: taskinImg,
-    repo: "https://github.com/mingmanhk/taskin",
+    live: { href: "https://taskin.app/", label: "taskin.app" },
+  },
+  {
+    name: "ScreenGrabber",
+    type: "product",
+    summary: "A native macOS screen capture app, built with Swift and SwiftUI and sold through Taskin.",
+    live: { href: "https://taskin.app/", label: "taskin.app" },
+  },
+  {
+    name: "Contact SyncMate",
+    type: "product",
+    summary: "A native macOS app for keeping contacts in sync, built with Swift and SwiftUI and sold through Taskin.",
     live: { href: "https://taskin.app/", label: "taskin.app" },
   },
   {

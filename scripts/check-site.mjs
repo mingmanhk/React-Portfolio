@@ -87,7 +87,7 @@ try {
   check((await page.locator(".netmap__caption").innerText()).includes("identity"), "plan tabs update the caption");
 
   await page.getByRole("button", { name: /^Products/ }).click();
-  check((await page.locator(".project").count()) === 3, "project filter works");
+  check((await page.locator(".project").count()) === 5, "project filter works");
 
   // Dark theme contrast.
   const dark = await (await browser.newContext({ colorScheme: "dark" })).newPage();

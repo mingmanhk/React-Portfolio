@@ -1253,8 +1253,17 @@ main > section {
     margin-bottom: 0.2rem;
   }
 
-  .role {
-    break-inside: avoid-page;
+  /* Roles may span pages (long roles otherwise leave large gaps); each themed
+     group and the role header stay together. */
+  .role__group,
+  .role summary,
+  .role__scope {
+    break-inside: avoid;
+  }
+
+  .role__scope,
+  .role__theme {
+    break-after: avoid;
   }
 
   /* Skills print as five compact labelled rows. */

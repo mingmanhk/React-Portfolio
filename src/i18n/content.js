@@ -14,6 +14,7 @@ const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 /** "Mar 2026" → "2026年3月" for Chinese pages; "Present" → the locale's word. */
 function localizeDate(value, t) {
   if (value === "Present") return t.ui.present;
+  if (/^\d{4}$/.test(value)) return `${value}年`;
   const [mon, year] = value.split(" ");
   return `${year}年${t.months[MONTHS.indexOf(mon)]}`;
 }

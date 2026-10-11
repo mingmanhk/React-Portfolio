@@ -8,7 +8,7 @@ function ProjectCard({ project }) {
   return (
     <li className="project">
       <div className="project__media">
-        {imgFailed ? (
+        {imgFailed || !project.img ? (
           <span className="project__placeholder" aria-hidden="true">
             <Icon name="code" size={32} />
           </span>
@@ -26,10 +26,12 @@ function ProjectCard({ project }) {
               <span className="visually-hidden"> ({ui.forProject(project.live.label, project.name)})</span>
             </a>
           )}
-          <a href={project.repo} target="_blank" rel="noopener noreferrer">
-            <Icon name="github" size={16} /> {ui.source}
-            <span className="visually-hidden"> ({ui.forProject(ui.source, project.name)})</span>
-          </a>
+          {project.repo && (
+            <a href={project.repo} target="_blank" rel="noopener noreferrer">
+              <Icon name="github" size={16} /> {ui.source}
+              <span className="visually-hidden"> ({ui.forProject(ui.source, project.name)})</span>
+            </a>
+          )}
         </div>
       </div>
     </li>
