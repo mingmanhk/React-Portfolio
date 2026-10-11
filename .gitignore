@@ -10,7 +10,7 @@ jspm_packages/
 .nyc_output
 
 # Production build
-# /build - Commented out to allow GitHub Pages deployment
+/build
 dist/
 
 # Environment variables
@@ -92,3 +92,6 @@ tmp/
 
 # Vercel
 .vercel
+
+# Temporary server-render bundle used by scripts/prerender.mjs
+/build-ssr

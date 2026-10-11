@@ -1,221 +1,87 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
-    
-    <!-- Primary Meta Tags -->
-    <title>Victor Lam | IT Manager & Full Stack Developer Portfolio</title>
-    <meta name="title" content="Victor Lam | IT Manager & Full Stack Developer Portfolio">
-    <meta name="description" content="IT Manager at City of Lakewood with expertise in municipal IT operations, strategic planning, and digital transformation. Full stack developer portfolio showcasing React, Node.js, and cloud solutions.">
-    <meta name="keywords" content="IT Manager, Full Stack Developer, React, Node.js, Cloud Solutions, Cybersecurity, Digital Transformation, Portfolio, Victor Lam, City of Lakewood">
-    <meta name="author" content="Victor Lam">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://victorportfolio.vercel.app/">
-    <meta property="og:title" content="Victor Lam | IT Manager & Full Stack Developer Portfolio">
-    <meta property="og:description" content="IT Manager at City of Lakewood with expertise in municipal IT operations, strategic planning, and digital transformation. Full stack developer portfolio showcasing React, Node.js, and cloud solutions.">
-    <meta property="og:image" content="https://victorportfolio.vercel.app/social-share-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Victor Lam - IT Manager & Full Stack Developer">
-    <meta property="og:site_name" content="Victor Portfolio">
-    <meta property="og:locale" content="en_US">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://victorportfolio.vercel.app/">
-    <meta property="twitter:title" content="Victor Lam | IT Manager & Full Stack Developer Portfolio">
-    <meta property="twitter:description" content="IT Manager at City of Lakewood with expertise in municipal IT operations, strategic planning, and digital transformation.">
-    <meta property="twitter:image" content="https://victorportfolio.vercel.app/social-share-image.jpg">
-    <meta property="twitter:creator" content="@victorlam">
-    <meta property="twitter:site" content="@victorlam">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://victorportfolio.vercel.app/">
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="/src/index.css" as="style">
-    <link rel="preload" href="/src/App.jsx" as="script">
-    
-    <!-- Manifest for PWA -->
-    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
-    
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#1a202c">
-    <meta name="color-scheme" content="dark light">
-    
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="/apple-touch-icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-    
-    <!-- Favicon Variations -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1a202c">
-    
-    <!-- JSON-LD Structured Data -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!--CSP-->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <title>Victor Lam | Acting CIO, City of Lakewood & Full-Stack Developer</title>
+    <meta name="description" content="Victor Lam is Acting Chief Information Officer at the City of Lakewood, WA, with 18+ years leading IT infrastructure, security, and service operations across local government and global enterprises." />
+    <meta name="author" content="Victor Lam" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://mingmanhk.github.io/React-Portfolio/" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://mingmanhk.github.io/React-Portfolio/" />
+    <meta property="og:site_name" content="Victor Lam" />
+    <meta property="og:title" content="Victor Lam | Acting CIO, City of Lakewood" />
+    <meta property="og:description" content="Public-sector IT leadership built on security, standards, and measurable outcomes." />
+    <meta property="og:image" content="https://mingmanhk.github.io/React-Portfolio/social-share-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Victor Lam, Acting CIO, City of Lakewood, WA" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Victor Lam | Acting CIO, City of Lakewood" />
+    <meta name="twitter:description" content="Public-sector IT leadership built on security, standards, and measurable outcomes." />
+    <meta name="twitter:image" content="https://mingmanhk.github.io/React-Portfolio/social-share-image.jpg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#f2f5f4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f1a1e" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Applies the saved theme before first paint; external because the CSP forbids inline scripts. -->
+    <script src="/theme-init.js"></script>
+
+    <link rel="me" href="https://www.linkedin.com/in/mingmanhk" />
+    <link rel="me" href="https://github.com/mingmanhk" />
+    <!--GSC-->
+
+    <!-- ProfilePage markup helps Google show this page as Victor Lam's profile in search results. -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Victor Lam",
-      "jobTitle": "IT Manager",
-      "worksFor": {
-        "@type": "GovernmentOrganization",
-        "name": "City of Lakewood, Washington",
-        "url": "https://www.cityoflakewood.us"
-      },
-      "description": "IT Manager specializing in municipal IT operations, strategic planning, and digital transformation. Full stack developer with expertise in React, Node.js, and cloud solutions.",
-      "url": "https://victorportfolio.vercel.app/",
-      "sameAs": [
-        "https://github.com/mingmanhk",
-        "https://linkedin.com/in/victorlam"
-      ],
-      "knowsAbout": [
-        "IT Management",
-        "Cybersecurity",
-        "Cloud Computing",
-        "React Development",
-        "Node.js",
-        "Digital Transformation",
-        "Strategic Planning",
-        "Budget Management",
-        "Team Leadership"
-      ],
-      "hasOccupation": {
-        "@type": "Occupation",
-        "name": "IT Manager",
-        "occupationLocation": {
-          "@type": "City",
-          "name": "Lakewood",
-          "address": {
-            "@type": "PostalAddress",
-            "addressRegion": "Washington",
-            "addressCountry": "US"
-          }
-        },
-        "estimatedSalary": {
-          "@type": "MonetaryAmount",
-          "currency": "USD",
-          "value": {
-            "@type": "QuantitativeValue",
-            "minValue": 120000,
-            "maxValue": 160000,
-            "unitText": "YEAR"
-          }
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": "https://mingmanhk.github.io/React-Portfolio/",
+        "name": "Victor Lam | Acting CIO, City of Lakewood",
+        "dateModified": "2026-10-11",
+        "mainEntity": {
+          "@type": "Person",
+          "@id": "https://mingmanhk.github.io/React-Portfolio/#victor-lam",
+          "name": "Victor Lam",
+          "alternateName": "Ming Man Lam",
+          "jobTitle": "Acting Chief Information Officer",
+          "description": "Acting CIO and IT Manager at the City of Lakewood, Washington, with 18+ years leading IT infrastructure, cybersecurity, and service operations.",
+          "worksFor": {
+            "@type": "GovernmentOrganization",
+            "name": "City of Lakewood, Washington",
+            "url": "https://cityoflakewood.us"
+          },
+          "address": { "@type": "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA", "addressCountry": "US" },
+          "image": "https://mingmanhk.github.io/React-Portfolio/social-share-image.jpg",
+          "url": "https://mingmanhk.github.io/React-Portfolio/",
+          "sameAs": ["https://www.linkedin.com/in/mingmanhk", "https://github.com/mingmanhk", "https://w1it.com", "https://taskin.app"],
+          "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "University of Houston" },
+            { "@type": "CollegeOrUniversity", "name": "Dallas Baptist University" }
+          ],
+          "knowsAbout": ["Chief Information Officer", "Public Sector IT", "Municipal Government Technology", "Cybersecurity", "Zero Trust", "Infrastructure Modernization", "IT Service Management", "ITIL", "Cloud Computing", "Microsoft 365", "Full-Stack Development"]
         }
-      },
-      "alumniOf": [
-        {
-          "@type": "EducationalOrganization",
-          "name": "University of Washington"
-        }
-      ]
-    }
-    </script>
-    
-    <!-- Additional Schema for Portfolio -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Victor Lam Portfolio",
-      "url": "https://victorportfolio.vercel.app",
-      "description": "Professional portfolio of Victor Lam, IT Manager and Full Stack Developer",
-      "publisher": {
-        "@type": "Person",
-        "name": "Victor Lam"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://victorportfolio.vercel.app/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
       }
-    }
-    </script>
-    
-    <!-- Performance & Security Headers (via meta tags where possible) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    
-    <!-- Mobile Web App Capable -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Victor Portfolio">
-    
-    <!-- Microsoft Tiles -->
-    <meta name="msapplication-TileColor" content="#1a202c">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="msapplication-config" content="/browserconfig.xml">
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    <link rel="dns-prefetch" href="https://vercel.live">
-    
-    <!-- Performance Monitoring -->
-    <script defer src="https://va.vercel-scripts.com/v1/script.js"></script>
-    
-    <!-- Google Analytics (optional) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
     </script>
   </head>
-  <body class="antialiased bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+  <body>
     <div id="root"></div>
     <noscript>
-      <div class="noscript-warning">
-        <h1>JavaScript Required</h1>
-        <p>This portfolio website requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
-        <p>You can view my resume at <a href="/resume.pdf">/resume.pdf</a> or contact me at <a href="mailto:victor@example.com">victor@example.com</a>.</p>
-      </div>
+      <p class="noscript">Victor Lam, Acting Chief Information Officer, City of Lakewood, WA.
+        Connect on <a href="https://www.linkedin.com/in/mingmanhk">LinkedIn</a> or
+        <a href="https://github.com/mingmanhk">GitHub</a>.</p>
     </noscript>
     <script type="module" src="/src/main.jsx"></script>
-    
-    <!-- Performance Monitoring -->
-    <script>
-      // Performance monitoring
-      if ('performance' in window) {
-        window.addEventListener('load', function() {
-          setTimeout(function() {
-            const perfEntries = performance.getEntriesByType('navigation');
-            if (perfEntries.length > 0) {
-              const navEntry = perfEntries[0];
-              console.log('Performance Metrics:', {
-                'DOM Content Loaded': navEntry.domContentLoadedEventEnd,
-                'Load Time': navEntry.loadEventEnd,
-                'First Paint': performance.getEntriesByType('paint')[0]?.startTime || 'N/A'
-              });
-            }
-          }, 0);
-        });
-      }
-      
-      // Error tracking
-      window.addEventListener('error', function(e) {
-        console.error('Application Error:', e.error);
-        // Send to analytics service
-        if (typeof gtag === 'function') {
-          gtag('event', 'exception', {
-            'description': e.error.message,
-            'fatal': false
-          });
-        }
-      });
-    </script>
   </body>
 </html>

@@ -6,19 +6,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Get the base URL from environment variable or use a default
-const BASE_URL = process.env.VITE_SITE_URL || 'https://victorportfolio.vercel.app';
+const BASE_URL = process.env.VITE_SITE_URL || 'https://mingmanhk.github.io/React-Portfolio';
 
 const today = new Date().toISOString().split('T')[0];
 
-const routes = [
-  { path: '/', priority: '1.0', changefreq: 'weekly' },
-  { path: '/#about', priority: '0.8', changefreq: 'monthly' },
-  { path: '/#experience', priority: '0.8', changefreq: 'monthly' },
-  { path: '/#resume', priority: '0.8', changefreq: 'monthly' },
-  { path: '/#projects', priority: '0.8', changefreq: 'monthly' },
-  { path: '/#contact', priority: '0.8', changefreq: 'monthly' },
-  { path: '/privacy-policy.html', priority: '0.5', changefreq: 'yearly' }
-];
+// Fragment URLs (#about) are ignored by crawlers, so only real pages are listed.
+const routes = [{ path: '/', priority: '1.0', changefreq: 'monthly' }];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

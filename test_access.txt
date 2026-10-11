@@ -1,8 +1,0 @@
-//
-Checking
-if
-we
-can
-access
-the
-file

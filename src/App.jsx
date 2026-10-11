@@ -1,32 +1,23 @@
-import React from "react";
-import Header from "./components/Header.jsx";
-import About from "./components/about.jsx";
-import Intro from "./intro.jsx";
-import Experience from "./components/experience.jsx";
-import Resume from "./components/resume.jsx";
-import Contact from "./components/contact.jsx";
-import Footer from "./components/Footer.jsx";
-import ErrorBoundary from "./components/ErrorBoundary.jsx";
-import "./App.css";
+import SiteHeader from "./components/SiteHeader";
+import Hero from "./components/Hero";
+import Experience from "./components/Experience";
+import Capabilities from "./components/Capabilities";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import SiteFooter from "./components/SiteFooter";
 
-const App = () => {
+export default function App() {
   return (
-    <ErrorBoundary>
-      <div className="app-container">
-        <Header />
-        <Intro />
-        
-        <main id="main" className="main-content">
-          <About />
-          <Experience />
-          <Resume />
-          <Contact />
-        </main>
-        
-        <Footer />
-      </div>
-    </ErrorBoundary>
+    <>
+      <SiteHeader />
+      <main id="main">
+        <Hero />
+        <Experience />
+        <Capabilities />
+        <Projects />
+        <Contact />
+      </main>
+      <SiteFooter />
+    </>
   );
-};
-
-export default App;
+}

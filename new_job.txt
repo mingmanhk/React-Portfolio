@@ -1,4 +1,0 @@
-const
-newJob
-=
- title: "City of Lakewood, Washington | IT Manager" 
