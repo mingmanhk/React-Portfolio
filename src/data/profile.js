@@ -97,14 +97,14 @@ export const experience = [
     org: "PinkkaMii LLC",
     title: "Founder and IT Consultant",
     start: "May 2025",
-    end: "Oct 2025",
+    end: "Present",
     location: "Seattle, WA",
     duties: [
       "Founded an independent practice delivering IT consulting and building software products.",
       "Built and launched W1IT.com, an IT consulting and managed services brand focused on network architecture, design, and security assessments.",
       "Launched Taskin.app, a free browser-based toolkit of everyday utilities, from QR codes and image tools to file conversion and AI-assisted stock analysis.",
       "Shipped native Apple apps in Swift and SwiftUI, including Pixel Color Pick on the Mac App Store and the DeepTicker AI portfolio tracker for iOS.",
-      "Advised small businesses on cloud infrastructure, security, and IT operations.",
+      "Advise small businesses on cloud infrastructure, security, and IT operations.",
     ],
   },
   {
