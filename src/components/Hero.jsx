@@ -21,6 +21,11 @@ export default function Hero() {
           {person.email} · linkedin.com/in/mingmanhk · github.com/mingmanhk · {person.website}
         </p>
         <p className="hero__lede">{person.lede}</p>
+        {/* Résumé executive summary: printed and in the PDF, where the hero lede is replaced. */}
+        <div className="print-only print-summary">
+          <h2>{ui.summary}</h2>
+          <p>{person.summary}</p>
+        </div>
         <div className="hero__actions">
           <a className="button button--primary" href={`mailto:${person.email}`}>
             <Icon name="mail" size={18} /> {ui.emailMe}

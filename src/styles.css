@@ -743,8 +743,9 @@ main > section {
 ------------------------------------------------------------------- */
 .capabilities {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 2rem;
+  /* Five groups fit one row on desktop and reflow on smaller screens. */
+  grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
+  gap: 1.75rem;
 }
 
 .capability h3 {
@@ -1014,9 +1015,32 @@ main > section {
 }
 
 /* ------------------------------------------------------------------
+   Role scope, themes, and the current-role anchor
+------------------------------------------------------------------- */
+.role__scope {
+  margin: 0 0 0.75rem;
+  font-weight: 550;
+}
+
+.role__group + .role__group {
+  margin-top: 0.75rem;
+}
+
+.role__theme {
+  margin: 0 0 0.3rem;
+  font-size: var(--step--1);
+  font-weight: 700;
+  color: var(--evergreen);
+}
+
+.role--current .role__body {
+  border-left: 3px solid var(--evergreen);
+  padding-left: 1.1rem;
+}
+
+/* ------------------------------------------------------------------
    Collapsed duties and print-only content
 ------------------------------------------------------------------- */
-.role__extra,
 .print-only {
   display: none;
 }
@@ -1076,10 +1100,6 @@ main > section {
     display: block;
   }
 
-  .role__extra {
-    display: list-item;
-  }
-
   main > section {
     max-width: none;
     padding-inline: 0;
@@ -1119,10 +1139,23 @@ main > section {
     color: var(--muted);
   }
 
+  /* The résumé leads with the executive summary instead of the web lede. */
   .hero__lede {
+    display: none;
+  }
+
+  .print-summary h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .print-summary p {
+    margin: 0.35rem 0 0;
     font-size: 9.5pt;
-    max-width: none;
-    margin: 0;
+    line-height: 1.45;
   }
 
   .section {
@@ -1189,19 +1222,69 @@ main > section {
 
   .role__body ul {
     margin: 0.1rem 0 0;
+    padding-left: 1rem;
+    list-style: disc;
   }
 
   .role__body li {
     margin-bottom: 0.05rem;
   }
 
+  .role__scope {
+    margin: 0.05rem 0 0.15rem;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  .role__theme {
+    margin: 0.2rem 0 0;
+    font-size: 8.5pt;
+    color: var(--evergreen);
+  }
+
+  .role__group + .role__group {
+    margin-top: 0.1rem;
+  }
+
+  /* Anchor role: tinted rule and a little more air so it reads first. */
+  .role--current .role__body {
+    border-left: 2px solid var(--evergreen);
+    padding-left: 0.6rem;
+    margin-bottom: 0.2rem;
+  }
+
   .role {
     break-inside: avoid-page;
   }
 
+  /* Skills print as five compact labelled rows. */
+  /* One shared grid: the label column fits the widest label, so rows align. */
   .capabilities {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.15rem 0.9rem;
+  }
+
+  .capability {
+    display: contents;
+  }
+
+  .capability h3 {
+    white-space: nowrap;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .capability ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.3rem;
+  }
+
+  .capability li + li::before {
+    content: "· ";
+    color: var(--muted);
   }
 
   .capability h3,

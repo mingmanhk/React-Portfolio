@@ -6,7 +6,10 @@ export const person = {
   role: "Acting Chief Information Officer",
   org: "City of Lakewood, Washington",
   lede:
-    "I lead technology for a city government: the networks, identity, and service desk that police, parks, and City Hall depend on every day. Before Lakewood, I spent 18 years running IT for global companies in the Seattle area.",
+    "Public-sector CIO and enterprise IT leader. I run citywide technology strategy, security, and infrastructure for the City of Lakewood, after 18 years leading IT for global companies in the Seattle area.",
+  // Résumé executive summary (print and PDF).
+  summary:
+    "Public-sector CIO and enterprise IT leader with 18+ years modernizing infrastructure, security, and service operations. Currently Acting CIO for the City of Lakewood, Washington, leading citywide strategy, Zero Trust identity, and resilient hybrid infrastructure. Known for turning operating data into defensible investment decisions: 99% SLA compliance, 70% fewer help desk tickets, and hardware and software spend cut in half.",
   email: "mingmanhk@gmail.com",
   // Generated from this same data by scripts/build-resume-pdf.mjs (npm run resume:pdf).
   resumeUrl: `${import.meta.env.BASE_URL}victor-lam-resume.pdf`,
@@ -63,6 +66,10 @@ export const highlights = [
   { value: "100%", text: "uptime through a full colocation data center build and migration", org: "HTC America" },
 ];
 
+/**
+ * Each role opens with a one-line scope. Anchor roles group bullets by theme so a
+ * reader sees the shape of the job before the detail; others use a flat list.
+ */
 export const experience = [
   {
     org: "City of Lakewood, Washington",
@@ -70,14 +77,31 @@ export const experience = [
     start: "Mar 2026",
     end: "Present",
     location: "Lakewood, WA",
-    duties: [
+    current: true,
+    scope:
       "Lead citywide IT strategy, infrastructure modernization, and cybersecurity across City Hall, Police, Parks, and public-facing services.",
-      "Manage on-premises and cloud infrastructure for high performance, reliability, and secure connectivity across all departments.",
-      "Drive strategic planning, unified technology standards, and project delivery that align every investment to cost efficiency, operational fit, and regulatory compliance.",
-      "Oversee the City’s cybersecurity and compliance program, including access management, monitoring, and data protection.",
-      "Lead the City’s identity and access modernization, guided by Zero Trust principles.",
-      "Reduce virtualization and licensing costs through platform consolidation while improving disaster-recovery resilience for critical systems.",
-      "Implement data-driven governance for assets, service desk operations, and licensing to support transparent, defensible budget decisions.",
+    groups: [
+      {
+        theme: "Strategy and governance",
+        duties: [
+          "Drive strategic planning, unified technology standards, and project delivery that align every investment to cost efficiency, operational fit, and regulatory compliance.",
+          "Implement data-driven governance for assets, service desk operations, and licensing to support transparent, defensible budget decisions.",
+        ],
+      },
+      {
+        theme: "Security and identity",
+        duties: [
+          "Oversee the City’s cybersecurity and compliance program, including access management, monitoring, and data protection.",
+          "Lead the City’s identity and access modernization, guided by Zero Trust principles.",
+        ],
+      },
+      {
+        theme: "Infrastructure and resilience",
+        duties: [
+          "Manage on-premises and cloud infrastructure for high performance, reliability, and secure connectivity across all departments.",
+          "Reduce virtualization and licensing costs through platform consolidation while improving disaster-recovery resilience for critical systems.",
+        ],
+      },
     ],
   },
   {
@@ -86,13 +110,13 @@ export const experience = [
     start: "Nov 2025",
     end: "Feb 2026",
     location: "Seattle, WA",
+    scope:
+      "Strategic IT consulting for a Seattle-based passenger ferry and travel operator, advising leadership on operations, infrastructure, and security.",
     duties: [
-      "Provided strategic IT consulting for a Seattle-based passenger ferry and travel operator, advising leadership on operations, infrastructure, and security.",
       "Led the integration of U.S. operations with the parent company in Flensburg, Germany, ensuring seamless connectivity and alignment with global standards.",
-      "Collaborated closely with international IT teams and a German developer to keep cross-border projects on schedule and meeting quality expectations.",
-      "Evaluated existing software, vendor services, and support workflows, developing migration and systems-planning strategies grounded in ITIL principles.",
-      "Delivered prioritized, actionable recommendations to strengthen reliability, security, and operational efficiency.",
-      "Provided hands-on technical support and training to Seattle-based IT staff, improving local capabilities and day-to-day service stability.",
+      "Collaborated with international IT teams and a German developer to keep cross-border projects on schedule and meeting quality expectations.",
+      "Evaluated software, vendor services, and support workflows, and developed ITIL-based migration plans with prioritized recommendations for reliability, security, and efficiency.",
+      "Provided hands-on support and training to Seattle IT staff, improving local capabilities and day-to-day service stability.",
     ],
   },
   {
@@ -101,11 +125,10 @@ export const experience = [
     start: "May 2025",
     end: "Present",
     location: "Seattle, WA",
+    scope: "Independent practice delivering IT consulting and software products.",
     duties: [
-      "Founded an independent practice delivering IT consulting and building software products.",
-      "Built and launched W1IT.com, an IT consulting and managed services brand focused on network architecture, design, and security assessments.",
-      "Launched Taskin.app, a free browser-based toolkit of everyday utilities, from QR codes and image tools to file conversion and AI-assisted stock analysis.",
-      "Shipped native Apple apps in Swift and SwiftUI, including Pixel Color Pick on the Mac App Store and the DeepTicker AI portfolio tracker for iOS.",
+      "Built and launched W1IT.com, an IT consulting and managed services brand for network architecture, design, and security assessments.",
+      "Launched Taskin.app and shipped native Apple apps in Swift and SwiftUI, including Pixel Color Pick (Mac App Store) and DeepTicker (iOS).",
       "Advise small businesses on cloud infrastructure, security, and IT operations.",
     ],
   },
@@ -115,17 +138,29 @@ export const experience = [
     start: "May 2018",
     end: "Apr 2025",
     location: "Bellevue, WA",
-    duties: [
-      "Directed Americas service desk operations for 1,000+ users across Windows, macOS, virtual desktops, and mobile, reaching 99% SLA compliance.",
-      "Revamped global ticketing in line with ITIL, refining SLA and KPI frameworks for better reporting and user experience.",
-      "Built global SOPs and a knowledge library that cut help desk volume by 70%.",
-      "Automated inventory tracking with RFID and BLE, reducing reconciliation time by 95% and improving CMDB accuracy.",
-      "Partnered with Finance on predictive procurement models, reaching 95% forecast accuracy and halving hardware and software spend.",
-      "Ran global asset lifecycle programs to cybersecurity and governance standards with 100% audit accuracy and zero asset loss.",
-      "Built executive dashboards in SQL, Python, Tableau, and Power BI for KPIs, SLA adherence, and total cost of ownership.",
-      "Reduced operating costs by 30% through vendor performance management, SLA enforcement, and negotiation.",
-      "Introduced automation and AI chatbot tools for self-healing workflows and faster responses.",
-      "Mentored Tier 1–3 service desk teams across regions.",
+    scope: "Led Americas IT service operations for 1,000+ users across Windows, macOS, virtual desktops, and mobile.",
+    groups: [
+      {
+        theme: "Service delivery",
+        duties: [
+          "Reached 99% SLA compliance by rebuilding global ticketing on ITIL and refining SLA and KPI frameworks.",
+          "Cut help desk volume 70% with global SOPs, a self-service knowledge library, and automation and AI chatbot tools.",
+        ],
+      },
+      {
+        theme: "Financial and asset governance",
+        duties: [
+          "Halved hardware and software spend through predictive procurement built with Finance, at 95% forecast accuracy.",
+          "Reduced operating costs 30% through vendor performance management, SLA enforcement, and negotiation.",
+          "Ran global asset lifecycle programs with 100% audit accuracy and zero asset loss; RFID and BLE tracking cut reconciliation time 95%.",
+        ],
+      },
+      {
+        theme: "Leadership",
+        duties: [
+          "Built executive KPI and total-cost-of-ownership dashboards in SQL, Python, Tableau, and Power BI, and mentored Tier 1–3 teams across regions.",
+        ],
+      },
     ],
   },
   {
@@ -134,8 +169,8 @@ export const experience = [
     start: "Jun 2016",
     end: "May 2018",
     location: "Bellevue, WA",
+    scope: "Built IT from the ground up as the company grew from 30 to 500+ users across multiple states.",
     duties: [
-      "Built IT policy and support frameworks from scratch as the company grew from 30 to 500+ users across multiple states.",
       "Led IT due diligence and onboarding for 5+ mergers and acquisitions with full asset continuity.",
       "Drove a cloud-first strategy on VMware, Azure, and AWS to improve scalability and reduce infrastructure overhead.",
       "Established ISO, SOX, SOC, and HIPAA compliance controls and disaster recovery frameworks.",
@@ -147,12 +182,11 @@ export const experience = [
     start: "Apr 2007",
     end: "Jun 2016",
     location: "Bellevue, WA",
+    scope: "Led North American service desk, network, and systems administration teams.",
     duties: [
-      "Led North American service desk, network, and systems administration teams.",
       "Built and migrated a U.S. colocation data center with 100% uptime and no business disruption.",
-      "Moved on-premises systems to virtualized VMware and Azure environments.",
-      "Wrote disaster recovery and business continuity plans that supported ISO certification.",
-      "Developed APIs and tuned SQL performance for cross-platform data integration, working with global SAP teams.",
+      "Moved on-premises systems to VMware and Azure, and wrote disaster recovery and continuity plans that supported ISO certification.",
+      "Developed APIs and tuned SQL for cross-platform data integration with global SAP teams.",
     ],
   },
   {
@@ -161,28 +195,33 @@ export const experience = [
     start: "Mar 2005",
     end: "Apr 2007",
     location: "Houston, TX",
-    duties: [
-      "Built internal web applications that streamlined warehouse operations and e-commerce workflows.",
-      "Engineered and maintained PHP back-end services and MySQL databases for order and inventory systems.",
-    ],
+    scope: "Built internal web applications, PHP services, and MySQL databases for warehouse, order, and inventory systems.",
+    duties: [],
   },
 ];
 
 export const capabilities = [
   {
-    name: "Leadership",
-    items: ["IT strategy and roadmaps", "Budget and procurement", "Vendor management", "Policy and governance", "Distributed teams"],
+    name: "Leadership and strategy",
+    items: ["IT strategy and roadmaps", "Budget, procurement, and vendors", "Policy and governance", "Distributed team leadership"],
   },
   {
-    name: "Security and infrastructure",
-    items: ["Zero Trust identity", "Network and remote-access security", "Microsoft 365 and Entra ID", "Virtualization and disaster recovery", "AWS and Azure"],
+    name: "Security and governance",
+    items: ["Zero Trust identity and access", "ISO, SOX, SOC, HIPAA controls", "Risk and audit readiness", "Disaster recovery and continuity"],
   },
   {
-    name: "Service and delivery",
-    items: ["ITIL service design", "ServiceNow, Jira, Freshworks", "Asset lifecycle", "Dashboards and analytics", "React, Node.js, SQL"],
+    name: "Infrastructure and cloud",
+    items: ["Hybrid on-premises and cloud", "Microsoft 365 and Entra ID", "AWS and Azure", "Virtualization and networking"],
+  },
+  {
+    name: "Service delivery and operations",
+    items: ["ITIL service design", "ServiceNow, Jira, Freshworks", "Asset lifecycle and CMDB", "KPI and SLA dashboards"],
+  },
+  {
+    name: "Engineering and development",
+    items: ["React and Node.js", "Swift and SwiftUI", "SQL and Python", "APIs and integration"],
   },
 ];
-
 export const projectTypes = [
   { id: "all", label: "All" },
   { id: "product", label: "Products" },

@@ -1,21 +1,31 @@
-import { useState } from "react";
 import Icon from "./Icon";
 import { useContent } from "../i18n";
 
-const PREVIEW = 6;
+function DutyList({ duties }) {
+  if (!duties?.length) return null;
+  return (
+    <ul>
+      {duties.map((duty) => (
+        <li key={duty}>{duty}</li>
+      ))}
+    </ul>
+  );
+}
 
+/**
+ * One role: scope line first, then bullets. Anchor roles group bullets under
+ * themes so the shape of the job reads before the detail.
+ */
 function Role({ job, defaultOpen }) {
   const { ui } = useContent();
-  const [expanded, setExpanded] = useState(false);
-  const hidden = job.duties.length - PREVIEW;
-  const collapsible = hidden > 1;
-
   return (
-    <li className="role">
+    <li className={job.current ? "role role--current" : "role"}>
       <details open={defaultOpen}>
         <summary>
           <span className="role__when">
-            <time>{job.start}</time>{ui.dateSep}<time>{job.end}</time>
+            <time>{job.start}</time>
+            {ui.dateSep}
+            <time>{job.end}</time>
           </span>
           <span className="role__head">
             <span className="role__org">{job.org}</span>
@@ -25,19 +35,16 @@ function Role({ job, defaultOpen }) {
         </summary>
         <div className="role__body">
           <p className="role__location">{job.location}</p>
-          {/* Every duty is rendered so print and search engines get the full list;
-              extras are hidden on screen until "Show more". */}
-          <ul>
-            {job.duties.map((duty, i) => (
-              <li key={duty} className={collapsible && !expanded && i >= PREVIEW ? "role__extra" : undefined}>
-                {duty}
-              </li>
-            ))}
-          </ul>
-          {collapsible && (
-            <button type="button" className="text-button" onClick={() => setExpanded((v) => !v)} aria-expanded={expanded}>
-              {expanded ? ui.showFewer : ui.showMore(hidden)}
-            </button>
+          <p className="role__scope">{job.scope}</p>
+          {job.groups ? (
+            job.groups.map((g) => (
+              <div key={g.theme} className="role__group">
+                <h4 className="role__theme">{g.theme}</h4>
+                <DutyList duties={g.duties} />
+              </div>
+            ))
+          ) : (
+            <DutyList duties={job.duties} />
           )}
         </div>
       </details>
