@@ -111,12 +111,30 @@ export const experience = [
     end: "Feb 2026",
     location: "Seattle, WA",
     scope:
-      "Strategic IT consulting for a Seattle-based passenger ferry and travel operator, advising leadership on operations, infrastructure, and security.",
-    duties: [
-      "Led the integration of U.S. operations with the parent company in Flensburg, Germany, ensuring seamless connectivity and alignment with global standards.",
-      "Collaborated with international IT teams and a German developer to keep cross-border projects on schedule and meeting quality expectations.",
-      "Evaluated software, vendor services, and support workflows, and developed ITIL-based migration plans with prioritized recommendations for reliability, security, and efficiency.",
-      "Provided hands-on support and training to Seattle IT staff, improving local capabilities and day-to-day service stability.",
+      "Delivered strategic IT consulting for a Seattle-based passenger ferry and travel operator, advising leadership on operations, infrastructure modernization, and security.",
+    groups: [
+      {
+        theme: "Strategic advisory and cross-border integration",
+        duties: [
+          "Led the integration of U.S. operations with the parent company in Flensburg, Germany, ensuring seamless connectivity and alignment with global standards.",
+          "Collaborated with international IT teams and a German developer to keep cross-border projects on schedule and meeting quality expectations.",
+          "Evaluated software, vendor services, and support workflows, developing ITIL-based migration plans with prioritized recommendations for reliability, security, and efficiency.",
+        ],
+      },
+      {
+        theme: "Infrastructure modernization",
+        duties: [
+          "Rebuilt core infrastructure: Active Directory and domain structure, VMware hosts, file and print services with redesigned shared storage and permissions, and the network (VLANs, routing, firewall policies, segmentation).",
+          "Strengthened identity, access, and security controls aligned with Zero Trust principles.",
+        ],
+      },
+      {
+        theme: "Operational stability and team enablement",
+        duties: [
+          "Provided hands-on technical support and training to Seattle IT staff, improving local capabilities and day-to-day service stability.",
+          "Streamlined support workflows and processes to reduce friction and increase reliability across U.S. operations.",
+        ],
+      },
     ],
   },
   {
