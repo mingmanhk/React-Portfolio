@@ -40,7 +40,7 @@ try {
     await new Promise((r) => setTimeout(r, 250));
   }
 
-  for (const file of ["victor-lam-resume.pdf", "sitemap.xml", "privacy-policy.html", "social-share-image.jpg"]) {
+  for (const file of ["victor-lam-resume.pdf", "sitemap.xml", "privacy-policy.html", "social-share-image.jpg", "zh-hant/", "zh-hans/"]) {
     const res = await fetch(base + file);
     check(res.ok, `serves ${file}`, String(res.status));
   }
@@ -90,11 +90,32 @@ try {
   const axeDark = await new AxeBuilder({ page: dark }).withRules(["color-contrast"]).analyze();
   check(axeDark.violations.length === 0, "dark theme passes color contrast", axeDark.violations.map((v) => v.id).join(", "));
 
+  // Chinese pages: correct language, translated content, hydrate without errors.
+  for (const [route, lang, sample] of [
+    ["zh-hant/", "zh-Hant", "代理資訊長"],
+    ["zh-hans/", "zh-Hans", "代理首席信息官"],
+  ]) {
+    const zh = await (await browser.newContext({ viewport: { width: 1280, height: 800 } })).newPage();
+    const zhErrors = [];
+    zh.on("pageerror", (e) => zhErrors.push(e.message));
+    zh.on("console", (m) => {
+      if (m.type() === "error" && !/goatcounter|ERR_FAILED/i.test(m.text())) zhErrors.push(m.text());
+    });
+    await zh.goto(base + route, { waitUntil: "networkidle" });
+    const htmlLang = await zh.locator("html").getAttribute("lang");
+    const text = await zh.locator("body").innerText();
+    check(htmlLang === lang && text.includes(sample) && zhErrors.length === 0, `${lang} page renders`, zhErrors.join(" | "));
+    const zhAxe = await new AxeBuilder({ page: zh }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+    check(zhAxe.violations.length === 0, `${lang} has no accessibility violations`, zhAxe.violations.map((v) => v.id).join(", "));
+  }
+
   // Phone: layout must not scroll sideways.
   const phone = await (await browser.newContext({ viewport: { width: 320, height: 640 }, isMobile: true, hasTouch: true })).newPage();
-  await phone.goto(base, { waitUntil: "networkidle" });
-  const overflow = await phone.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
-  check(overflow <= 0, "no horizontal scroll at 320px", `${overflow}px`);
+  for (const route of ["", "zh-hant/", "zh-hans/"]) {
+    await phone.goto(base + route, { waitUntil: "networkidle" });
+    const overflow = await phone.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    check(overflow <= 0, `no horizontal scroll at 320px (/${route})`, `${overflow}px`);
+  }
 
   await browser.close();
 } finally {

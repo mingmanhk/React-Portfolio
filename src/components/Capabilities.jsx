@@ -1,9 +1,10 @@
-import { capabilities, education } from "../data/profile";
+import { useContent } from "../i18n";
 
 export default function Capabilities() {
+  const { capabilities, education, ui } = useContent();
   return (
     <section id="capabilities" className="section" aria-labelledby="capabilities-title">
-      <h2 id="capabilities-title">Capabilities</h2>
+      <h2 id="capabilities-title">{ui.capabilities}</h2>
       <div className="capabilities">
         {capabilities.map((group) => (
           <div key={group.name} className="capability">
@@ -17,7 +18,7 @@ export default function Capabilities() {
         ))}
       </div>
 
-      <h3 className="education__title">Education</h3>
+      <h3 className="education__title">{ui.education}</h3>
       <ul className="education">
         {education.map((e) => (
           <li key={e.name}>

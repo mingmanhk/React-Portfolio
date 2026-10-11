@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Icon from "./Icon";
-import { projects, projectTypes } from "../data/profile";
+import { useContent } from "../i18n";
 
 function ProjectCard({ project }) {
+  const { ui } = useContent();
   const [imgFailed, setImgFailed] = useState(false);
   return (
     <li className="project">
@@ -12,7 +13,7 @@ function ProjectCard({ project }) {
             <Icon name="code" size={32} />
           </span>
         ) : (
-          <img src={project.img} alt={`${project.name} screenshot`} loading="lazy" decoding="async" onError={() => setImgFailed(true)} />
+          <img src={project.img} alt={ui.screenshot(project.name)} loading="lazy" decoding="async" onError={() => setImgFailed(true)} />
         )}
       </div>
       <div className="project__body">
@@ -22,12 +23,12 @@ function ProjectCard({ project }) {
           {project.live && (
             <a href={project.live.href} target="_blank" rel="noopener noreferrer">
               <Icon name="external" size={16} /> {project.live.label}
-              <span className="visually-hidden"> for {project.name}</span>
+              <span className="visually-hidden"> ({ui.forProject(project.live.label, project.name)})</span>
             </a>
           )}
           <a href={project.repo} target="_blank" rel="noopener noreferrer">
-            <Icon name="github" size={16} /> Source
-            <span className="visually-hidden"> code for {project.name}</span>
+            <Icon name="github" size={16} /> {ui.source}
+            <span className="visually-hidden"> ({ui.forProject(ui.source, project.name)})</span>
           </a>
         </div>
       </div>
@@ -36,17 +37,18 @@ function ProjectCard({ project }) {
 }
 
 export default function Projects() {
+  const { projects, projectTypes, ui } = useContent();
   const [type, setType] = useState("all");
   const shown = type === "all" ? projects : projects.filter((p) => p.type === type);
 
   return (
     <section id="projects" className="section" aria-labelledby="projects-title">
       <div className="section__head">
-        <h2 id="projects-title">Projects</h2>
-        <p>Products I&apos;ve shipped and apps I&apos;ve built to keep my engineering skills current.</p>
+        <h2 id="projects-title">{ui.projects}</h2>
+        <p>{ui.projectsLede}</p>
       </div>
 
-      <div className="filters" role="group" aria-label="Filter projects">
+      <div className="filters" role="group" aria-label={ui.filterLabel}>
         {projectTypes.map((t) => (
           <button key={t.id} type="button" className="chip" aria-pressed={type === t.id} onClick={() => setType(t.id)}>
             {t.label}
@@ -57,7 +59,7 @@ export default function Projects() {
         ))}
       </div>
 
-      <p className="visually-hidden" aria-live="polite">{shown.length} projects shown</p>
+      <p className="visually-hidden" aria-live="polite">{ui.shown(shown.length)}</p>
       <ul className="projects">
         {shown.map((p) => (
           <ProjectCard key={p.name} project={p} />

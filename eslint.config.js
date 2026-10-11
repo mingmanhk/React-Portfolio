@@ -21,7 +21,11 @@ export default [
     rules: {
       ...js.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-      "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+      "react-refresh/only-export-components": [
+        "warn",
+        // The i18n module pairs its provider with hooks and lookups by design.
+        { allowConstantExport: true, allowExportNames: ["useContent", "useLocale", "getContent", "locales", "localeFromPath"] },
+      ],
       // JSX usage is invisible to core no-unused-vars without eslint-plugin-react.
       "no-unused-vars": ["error", { varsIgnorePattern: "^[A-Z_]" }],
     },

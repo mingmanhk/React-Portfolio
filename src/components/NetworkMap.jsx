@@ -1,5 +1,5 @@
 import { useId, useState } from "react";
-import { pillars, sites } from "../data/profile";
+import { useContent } from "../i18n";
 import { useReducedMotion } from "../hooks";
 
 const CORE = { x: 260, y: 196 };
@@ -18,6 +18,7 @@ function linkPath(site) {
  * the visitor prefers reduced motion.
  */
 export default function NetworkMap() {
+  const { pillars, sites, ui } = useContent();
   const [activeId, setActiveId] = useState("network");
   const reducedMotion = useReducedMotion();
   const baseId = useId();
@@ -35,7 +36,7 @@ export default function NetworkMap() {
 
   return (
     <figure className="netmap">
-      <h2 id={`${baseId}-heading`} className="netmap__heading">How I approach city IT</h2>
+      <h2 id={`${baseId}-heading`} className="netmap__heading">{ui.planHeading}</h2>
       <div className="netmap__tabs" role="tablist" aria-labelledby={`${baseId}-heading`} onKeyDown={onKeyDown}>
         {pillars.map((p) => (
           <button
@@ -60,7 +61,7 @@ export default function NetworkMap() {
         role="img"
         aria-labelledby={`${baseId}-title`}
       >
-        <title id={`${baseId}-title`}>{`Diagram of city sites on one connected network: ${active.name}`}</title>
+        <title id={`${baseId}-title`}>{ui.mapTitle(active.name)}</title>
 
         <g className="netmap__links">
           {sites.map((site) => {
@@ -89,7 +90,7 @@ export default function NetworkMap() {
 
         <g className="netmap__core">
           <rect x={CORE.x - 58} y={CORE.y - 26} width="116" height="52" rx="12" />
-          <text x={CORE.x} y={CORE.y + 5} textAnchor="middle">City network</text>
+          <text x={CORE.x} y={CORE.y + 5} textAnchor="middle">{ui.core}</text>
         </g>
 
         {sites.map((site) => {

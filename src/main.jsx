@@ -5,12 +5,16 @@ import "./styles.css";
 import App from "./App";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { initAnalytics } from "./analytics";
+import { LocaleProvider, localeFromPath } from "./i18n";
 
 const container = document.getElementById("root");
+// The language comes from the URL so it matches the prerendered page exactly.
 const app = (
   <StrictMode>
     <ErrorBoundary>
-      <App />
+      <LocaleProvider locale={localeFromPath(window.location.pathname)}>
+        <App />
+      </LocaleProvider>
     </ErrorBoundary>
   </StrictMode>
 );

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Icon from "./Icon";
-import { experience, highlights } from "../data/profile";
+import { useContent } from "../i18n";
 
 const PREVIEW = 6;
 
 function Role({ job, defaultOpen }) {
+  const { ui } = useContent();
   const [expanded, setExpanded] = useState(false);
   const hidden = job.duties.length - PREVIEW;
   const collapsible = hidden > 1;
@@ -14,7 +15,7 @@ function Role({ job, defaultOpen }) {
       <details open={defaultOpen}>
         <summary>
           <span className="role__when">
-            <time>{job.start}</time> to <time>{job.end}</time>
+            <time>{job.start}</time>{ui.dateSep}<time>{job.end}</time>
           </span>
           <span className="role__head">
             <span className="role__org">{job.org}</span>
@@ -35,7 +36,7 @@ function Role({ job, defaultOpen }) {
           </ul>
           {collapsible && (
             <button type="button" className="text-button" onClick={() => setExpanded((v) => !v)} aria-expanded={expanded}>
-              {expanded ? "Show fewer" : `Show ${hidden} more`}
+              {expanded ? ui.showFewer : ui.showMore(hidden)}
             </button>
           )}
         </div>
@@ -45,11 +46,12 @@ function Role({ job, defaultOpen }) {
 }
 
 export default function Experience() {
+  const { experience, highlights, ui } = useContent();
   return (
     <section id="experience" className="section" aria-labelledby="experience-title">
-      <h2 id="experience-title">Experience</h2>
+      <h2 id="experience-title">{ui.experience}</h2>
 
-      <dl className="highlights" aria-label="Career highlights">
+      <dl className="highlights" aria-label={ui.highlights}>
         {highlights.map((h) => (
           <div key={h.text} className="highlight">
             <dt>{h.value}</dt>
@@ -63,7 +65,7 @@ export default function Experience() {
 
       <ol className="timeline">
         {experience.map((job, i) => (
-          <Role key={job.org + job.start} job={job} defaultOpen={i === 0} />
+          <Role key={job.org} job={job} defaultOpen={i === 0} />
         ))}
       </ol>
     </section>

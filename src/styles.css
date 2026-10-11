@@ -1235,3 +1235,75 @@ main > section {
     text-decoration: none;
   }
 }
+
+/* ------------------------------------------------------------------
+   Language switcher and CJK typography
+------------------------------------------------------------------- */
+.lang-switch {
+  display: flex;
+  list-style: none;
+  margin: 0 0.25rem 0 0;
+  padding: 0.2rem;
+  gap: 0.1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.lang-switch a {
+  display: grid;
+  place-items: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: var(--step--1);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.lang-switch a:hover {
+  color: var(--ink);
+}
+
+.lang-switch a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Public Sans has no Chinese glyphs; use each platform's native CJK face. */
+:lang(zh-Hant) {
+  --font: "Public Sans Variable", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+
+:lang(zh-Hans) {
+  --font: "Public Sans Variable", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+
+/* Chinese reads better with looser leading and no negative tracking on headings. */
+:lang(zh) body {
+  line-height: 1.75;
+}
+
+:lang(zh) h1,
+:lang(zh) h2,
+:lang(zh) .role__org,
+:lang(zh) .contact__email a {
+  letter-spacing: 0;
+}
+
+@media (max-width: 400px) {
+  .lang-switch a {
+    min-width: 2rem;
+  }
+}
+
+@media print {
+  .lang-switch {
+    display: none;
+  }
+}
+
+/* Keep each date whole so a range wraps between dates, never inside one. */
+.role__when time {
+  white-space: nowrap;
+}

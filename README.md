@@ -48,6 +48,20 @@ Commit the updated PDF. Printing the live page from a browser produces the same 
 
 Every push and pull request runs `npm run check` in CI before deploying: no JavaScript errors, no WCAG 2.1 AA violations (axe-core) in light and dark themes, no horizontal scroll at 320px, working theme toggle, plan tabs and project filter, required files served, and an initial-load budget of 350 KB. Dependabot opens grouped dependency updates weekly; each must pass the same checks.
 
+## Languages
+
+| Page | URL |
+|---|---|
+| English | `/` |
+| Traditional Chinese | `/zh-hant/` |
+| Simplified Chinese | `/zh-hans/` |
+
+Each language is a separate prerendered page with its own `lang`, title, description, canonical URL, and `hreflang` alternates; the sitemap lists all three. English résumé content lives in `src/data/profile.js` and interface text in `src/i18n/en.js`. Traditional Chinese text lives in `src/i18n/zh-Hant.js` (same order as the English data). Simplified Chinese is generated from it with OpenCC — do not edit `zh-Hans.js` by hand:
+
+```bash
+npm run i18n:hans
+```
+
 ## Edit content
 
 All résumé content lives in [`src/data/profile.js`](src/data/profile.js): experience, highlights, capabilities, projects, education, and links. Components only render that data.

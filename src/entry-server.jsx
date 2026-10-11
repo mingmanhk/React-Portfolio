@@ -1,12 +1,17 @@
 import { StrictMode } from "react";
 import { renderToString } from "react-dom/server";
 import App from "./App";
+import { LocaleProvider, getContent, locales } from "./i18n";
 
-/** Renders the page to HTML at build time so crawlers and link previews see full content. */
-export function render() {
+export { getContent, locales };
+
+/** Renders one language's page to HTML at build time (see scripts/prerender.mjs). */
+export function render(locale) {
   return renderToString(
     <StrictMode>
-      <App />
+      <LocaleProvider locale={locale}>
+        <App />
+      </LocaleProvider>
     </StrictMode>
   );
 }
