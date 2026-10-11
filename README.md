@@ -16,7 +16,7 @@ Both hosts serve the same build. Canonical and Open Graph URLs point to GitHub P
 - React 19 and Vite 8
 - Hand-written CSS with design tokens, light and dark themes
 - Public Sans (the U.S. Web Design System typeface), self-hosted
-- Inline SVG icons and an interactive SVG diagram of the City's IT plan
+- Inline SVG icons and an interactive SVG diagram of how Victor approaches city IT
 - GoatCounter for cookie-free visitor analytics (optional)
 - Hosted on GitHub Pages and Vercel
 
