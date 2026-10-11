@@ -41,6 +41,12 @@ jobs:
 
       - run: npm run check
 
+      # Regenerate the résumé from src/data/profile.js on every deploy. The
+      # builder renders each layout candidate, scores it for ATS readiness, and
+      # writes only the best; it fails the deploy if none scores 100.
+      - run: npm run resume:pdf -- --min 100 --copy-to build/victor-lam-resume.pdf
+      - run: npm run check:ats -- --pdf build/victor-lam-resume.pdf --min 100
+
       - if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v6
 
@@ -73,3 +79,40 @@ jobs:
           curl -sS -o /dev/null -w "IndexNow HTTP %{http_code}\n" -X POST https://api.indexnow.org/indexnow \
             -H "Content-Type: application/json; charset=utf-8" \
             -d "{\"host\":\"mingmanhk.github.io\",\"key\":\"$KEY\",\"keyLocation\":\"$BASE/$KEY.txt\",\"urlList\":[\"$BASE/\",\"$BASE/zh-hant/\",\"$BASE/zh-hans/\",\"$BASE/victor-lam-resume.pdf\"]}"
+
+  # Claude reviews the deployed résumé for ATS and recruiter fit. Authenticates
+  # with Workload Identity Federation (no API key in the repo). Runs only on
+  # main, only once the federation IDs are set as repository variables, and is
+  # advisory: findings go to the job summary and a review.json artifact.
+  resume-review:
+    needs: deploy
+    if: github.ref == 'refs/heads/main' && vars.ANTHROPIC_FEDERATION_RULE_ID != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      ANTHROPIC_FEDERATION_RULE_ID: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID }}
+      ANTHROPIC_ORGANIZATION_ID: ${{ vars.ANTHROPIC_ORGANIZATION_ID }}
+      ANTHROPIC_SERVICE_ACCOUNT_ID: ${{ vars.ANTHROPIC_SERVICE_ACCOUNT_ID }}
+      ANTHROPIC_WORKSPACE_ID: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
+      ANTHROPIC_IDENTITY_TOKEN_FILE: /tmp/gha-jwt
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Fetch GitHub OIDC token
+        run: |
+          curl -sS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://api.anthropic.com" \
+            | jq -r .value > "$ANTHROPIC_IDENTITY_TOKEN_FILE"
+      - name: Download the deployed résumé
+        run: curl -sSf -o resume.pdf https://mingmanhk.github.io/React-Portfolio/victor-lam-resume.pdf
+      - run: node --import ./scripts/lib/asset-stub.mjs scripts/ai-resume-review.mjs --pdf resume.pdf
+      - uses: actions/upload-artifact@v5
+        with:
+          name: resume-review
+          path: review.json

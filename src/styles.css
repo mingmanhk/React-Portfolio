@@ -698,12 +698,6 @@ main > section {
   max-width: 46rem;
 }
 
-.role__location {
-  margin: 0 0 0.5rem;
-  font-size: var(--step--1);
-  color: var(--muted);
-}
-
 .role__body ul {
   margin: 0 0 0.75rem;
   padding-left: 1.1rem;
@@ -1072,6 +1066,38 @@ main > section {
   margin: 0.4in 0.5in;
 }
 
+/* Résumé density candidates. scripts/build-resume-pdf.mjs renders each,
+   scores it for ATS readiness, and ships the best (fewest pages wins ties). */
+@page tight {
+  size: letter;
+  margin: 0.35in 0.45in;
+}
+
+@media print {
+  html[data-print-density="compact"] {
+    font-size: 8.6pt;
+  }
+
+  html[data-print-density="compact"] body {
+    line-height: 1.28;
+  }
+
+  html[data-print-density="tight"] {
+    font-size: 8.3pt;
+  }
+
+  html[data-print-density="tight"] body {
+    page: tight;
+    line-height: 1.24;
+  }
+
+  html[data-print-density="compact"] .role,
+  html[data-print-density="tight"] .role {
+    padding-top: 0.3rem;
+    margin-top: 0.3rem;
+  }
+}
+
 @media print {
   :root,
   :root[data-theme="dark"] {
@@ -1212,27 +1238,46 @@ main > section {
     padding-top: 0.1rem;
   }
 
+  /* Grid with the head flattened, so the text layer reads employer, dates,
+     then title: the order ATS parsers expect for a job header. */
   .role summary {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: baseline;
-    gap: 1rem;
+    gap: 0.05rem 1rem;
     padding: 0;
     break-after: avoid;
+    /* Static so headers paint in document order: positioned boxes are drawn
+       after in-flow text, which put every job header after its bullets in the
+       PDF text layer and broke ATS parsing of employer, title, and dates. */
+    position: static;
+  }
+
+  .timeline {
+    position: static;
+  }
+
+  /* Ligatures (fi, fl) extract as single glyphs in some parsers, hiding
+     keywords such as "certification" from ATS matching. */
+  body {
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "clig" 0;
   }
 
   .role__when {
     order: 2;
+    grid-column: 2;
     padding: 0;
     white-space: nowrap;
   }
 
   .role__head {
-    flex-direction: column;
-    padding: 0;
+    display: contents;
   }
 
   .role__org {
+    order: 1;
+    grid-column: 1;
     font-size: 11pt;
     font-weight: 750;
   }
@@ -1240,6 +1285,8 @@ main > section {
   .role__title {
     font-weight: 600;
     color: var(--ink);
+    order: 3;
+    grid-column: 1 / -1;
   }
 
   .role__loc {
@@ -1256,10 +1303,6 @@ main > section {
     margin: 0;
     padding: 0 0 0.3rem;
     max-width: none;
-  }
-
-  .role__location {
-    display: none;
   }
 
   .role__body ul {

@@ -8,6 +8,7 @@
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
     "@axe-core/playwright": "^4.13.0",
     "@eslint/js": "^10.0.1",
     "@vitejs/plugin-react": "^6.1.2",
@@ -17,6 +18,7 @@
     "globals": "^17.13.0",
     "opencc-js": "^1.4.2",
     "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.10.38",
     "playwright-core": "^1.64.0",
     "vite": "^8.3.4"
   },
@@ -28,9 +30,10 @@
     "lint": "eslint .",
     "test": "npm run lint && npm run build && npm run check",
     "lint:fix": "eslint . --fix",
-    "resume:pdf": "node scripts/build-resume-pdf.mjs",
+    "resume:pdf": "node --import ./scripts/lib/asset-stub.mjs scripts/build-resume-pdf.mjs",
     "check": "node scripts/check-site.mjs",
-    "i18n:hans": "node scripts/gen-zh-hans.mjs"
+    "i18n:hans": "node scripts/gen-zh-hans.mjs",
+    "check:ats": "node --import ./scripts/lib/asset-stub.mjs scripts/check-resume-ats.mjs"
   },
   "browserslist": {
     "production": [

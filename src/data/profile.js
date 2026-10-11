@@ -2,6 +2,7 @@ import pixelColorPickImg from "../assets/pixel-color-pick.webp";
 import taskinImg from "../assets/taskin.webp";
 import screenGrabberIcon from "../assets/screengrabber-icon.webp";
 import contactSyncMateIcon from "../assets/contact-syncmate-icon.webp";
+import habitronIcon from "../assets/habitron-icon.webp";
 
 export const person = {
   name: "Victor Lam",
@@ -11,10 +12,10 @@ export const person = {
     "Public-sector CIO and enterprise IT leader. I run citywide technology strategy, security, and infrastructure for the City of Lakewood, after 18 years leading IT for global companies in the Seattle area.",
   // Résumé executive summary (print and PDF).
   summary:
-    "Public-sector CIO and enterprise IT leader with 18+ years modernizing infrastructure, security, and service operations. Currently Acting CIO for the City of Lakewood, Washington, leading citywide strategy, Zero Trust identity, and resilient hybrid infrastructure. Known for turning operating data into defensible investment decisions: 99% SLA compliance, 70% fewer help desk tickets, and hardware and software spend cut in half.",
+    "Chief Information Officer (CIO) and enterprise IT leader with 18+ years modernizing infrastructure, cybersecurity, and service operations across the public sector and global enterprises. Currently Acting CIO for the City of Lakewood, Washington, leading citywide IT strategy, enterprise architecture, Zero Trust identity, and resilient hybrid infrastructure. Known for turning operating data into defensible investment decisions: 99% SLA compliance, 70% fewer help desk tickets, and hardware and software spend cut in half.",
   email: "mingmanhk@gmail.com",
   // Generated from this same data by scripts/build-resume-pdf.mjs (npm run resume:pdf).
-  resumeUrl: `${import.meta.env.BASE_URL}victor-lam-resume.pdf`,
+  resumeUrl: `${import.meta.env?.BASE_URL ?? "/"}victor-lam-resume.pdf`,
   website: "mingmanhk.github.io/React-Portfolio",
   linkedin: "https://www.linkedin.com/in/mingmanhk",
   github: "https://github.com/mingmanhk",
@@ -88,7 +89,10 @@ export const experience = [
         theme: "Strategy and leadership",
         duties: [
           "Drive strategic planning, enterprise architecture, unified technology standards, and project portfolio delivery that align every investment to cost efficiency, operational fit, and regulatory compliance.",
-          "Implement data-driven governance for assets, service desk operations, and licensing to support transparent, defensible budget decisions."
+          "Implement data-driven governance for assets, service desk operations, and licensing to support transparent, defensible budget decisions.",
+          "Established program and portfolio management practices for citywide technology investments.",
+          "Introduced data governance standards for assets, licensing, and service operations.",
+          "Led org design and role leveling for IT functions supporting Police, Parks, and Public Works."
         ]
       },
       {
@@ -178,7 +182,9 @@ export const experience = [
           "Halved procurement spend through predictive modeling built with Finance, reaching 95% forecast accuracy and shrinking the inventory footprint.",
           "Reduced vendor costs 30% through contract management, SLA enforcement, performance monitoring, and negotiation.",
           "Built predictive executive dashboards in SQL, Python, Tableau, and Power BI for KPIs, SLA adherence, and total cost of ownership.",
-          "Mentored Tier 1–3 global teams in escalation discipline and technical excellence."
+          "Directed portfolio prioritization and multi-year infrastructure planning.",
+          "Built data governance models for CMDB accuracy and procurement forecasting.",
+          "Mentored Tier 1–3 global teams using competency frameworks and structured progression, building escalation discipline and technical excellence."
         ]
       },
       {
@@ -204,12 +210,13 @@ export const experience = [
     start: "Jun 2016",
     end: "May 2018",
     location: "Bellevue, WA",
-    scope: "Built and designed the IT organization from the ground up as the company grew from 30 to 500+ users across multi-state offices.",
+    scope: "Led IT for a fast-growing consulting firm across multi-state offices and 5+ acquisitions.",
     groups: [
       {
         theme: "Strategy and leadership",
         duties: [
-          "Designed foundational IT standards, policies, support procedures, and enterprise architecture, taking each from first draft to company-wide adoption.",
+          "Designed foundational enterprise architecture and data governance standards, with IT policies and support procedures taken from first draft to company-wide adoption.",
+          "Built the IT organization from 30 to 500+ users using org design and role leveling.",
           "Developed infrastructure roadmaps aligned with business goals, improving performance and disaster resilience across data center and remote offices.",
           "Led IT due diligence and service readiness for 5+ M&A integrations, with compliant onboarding, asset continuity, and alignment to parent-company standards."
         ]
@@ -263,8 +270,8 @@ export const experience = [
     ]
   },
   {
-    org: "Early career",
-    title: "AxionTech.com and Directron.com",
+    org: "AxionTech.com and Directron.com",
+    title: "Software Developer and Technical Support",
     start: "2006",
     end: "2007",
     location: "Houston, TX",
@@ -276,7 +283,7 @@ export const experience = [
 export const capabilities = [
   {
     name: "Leadership and strategy",
-    items: ["IT strategy and multi-year roadmaps", "Program and portfolio management", "People leadership and org design", "Procurement strategy and vendor management"],
+    items: ["IT strategy and multi-year roadmaps", "Program and portfolio management", "Capital planning and prioritization", "Project governance and PMO alignment", "People leadership and org design", "Procurement strategy and vendor management"],
   },
   {
     name: "Enterprise architecture and governance",
@@ -284,7 +291,7 @@ export const capabilities = [
   },
   {
     name: "Security and risk",
-    items: ["Cybersecurity architecture and Zero Trust", "SIEM, monitoring, and threat detection", "ISO, SOX, SOC, HIPAA controls", "Risk assessment and audit readiness"],
+    items: ["Cybersecurity architecture", "Identity and access management and Zero Trust", "SIEM, monitoring, and threat detection", "ISO, SOX, SOC, HIPAA controls", "Risk assessment and audit readiness"],
   },
   {
     name: "Infrastructure and resilience",
@@ -351,7 +358,8 @@ export const projects = [
     name: "Habitron",
     type: "web",
     summary: "A habit tracker with charts and authentication, built with Express, Sequelize, and Handlebars.",
-    img: raw("xaker00/habitron", "master/image/Home.jpg"),
+    img: habitronIcon,
+    icon: true,
     repo: "https://github.com/xaker00/habitron",
   },
   {

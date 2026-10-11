@@ -96,3 +96,10 @@ GoatCounter sets no cookies and collects no personal data, so no consent banner 
 ## License
 
 [MIT](LICENSE)
+
+## Résumé ATS pipeline
+
+- `npm run resume:pdf` renders the résumé in three print densities, scores each with `scripts/lib/ats-score.mjs`, and writes only the best (highest score, then fewest pages). It refuses to write a PDF below 100/100.
+- `npm run check:ats` re-scores a PDF: text layer, clean glyphs, contact block, standard headings, every role's employer/title/date range, CIO keyword coverage, and length/metadata.
+- CI regenerates the PDF from `src/data/profile.js` on every deploy and blocks the deploy if the score drops below 100.
+- Optional: the `resume-review` job asks Claude for an advisory recruiter/ATS review using Workload Identity Federation. Set repository variables `ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_ORGANIZATION_ID`, `ANTHROPIC_SERVICE_ACCOUNT_ID`, `ANTHROPIC_WORKSPACE_ID` to enable it. It never edits the résumé.
