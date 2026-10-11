@@ -23,3 +23,15 @@ if (container.hasChildNodes()) {
 }
 
 initAnalytics();
+
+// Closed <details> hide their content on paper, so open every role while printing
+// and restore the visitor's choices afterwards.
+let closedForPrint = [];
+window.addEventListener("beforeprint", () => {
+  closedForPrint = [...document.querySelectorAll("details:not([open])")];
+  closedForPrint.forEach((d) => (d.open = true));
+});
+window.addEventListener("afterprint", () => {
+  closedForPrint.forEach((d) => (d.open = false));
+  closedForPrint = [];
+});

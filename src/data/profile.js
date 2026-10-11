@@ -8,7 +8,9 @@ export const person = {
   lede:
     "I lead technology for a city government: the networks, identity, and service desk that police, parks, and City Hall depend on every day. Before Lakewood, I spent 18 years running IT for global companies in the Seattle area.",
   email: "mingmanhk@gmail.com",
-  resumeUrl: "https://drive.google.com/file/d/1fLUh_lNjaOft6ANH4B1FDgAt1DZQAQsS/view?usp=sharing",
+  // Generated from this same data by scripts/build-resume-pdf.mjs (npm run resume:pdf).
+  resumeUrl: `${import.meta.env.BASE_URL}victor-lam-resume.pdf`,
+  website: "mingmanhk.github.io/React-Portfolio",
   linkedin: "https://www.linkedin.com/in/mingmanhk",
   github: "https://github.com/mingmanhk",
 };

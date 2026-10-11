@@ -30,7 +30,23 @@ npm run dev      # http://localhost:3000/React-Portfolio/
 npm run lint
 npm run build    # outputs to build/
 npm run preview  # serves the production build
+npm run check    # quality gate against the build (needs Chromium; set CHROME_PATH if not auto-found)
+npm test         # lint + build + check
 ```
+
+## Résumé PDF
+
+`public/victor-lam-resume.pdf` is generated from the same data as the site, using the print stylesheet. After editing `src/data/profile.js`:
+
+```bash
+npm run build && npm run resume:pdf
+```
+
+Commit the updated PDF. Printing the live page from a browser produces the same layout.
+
+## Quality checks
+
+Every push and pull request runs `npm run check` in CI before deploying: no JavaScript errors, no WCAG 2.1 AA violations (axe-core) in light and dark themes, no horizontal scroll at 320px, working theme toggle, plan tabs and project filter, required files served, and an initial-load budget of 350 KB. Dependabot opens grouped dependency updates weekly; each must pass the same checks.
 
 ## Edit content
 

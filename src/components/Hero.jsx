@@ -15,13 +15,17 @@ export default function Hero() {
           </p>
         </div>
         <h1 id="hero-title">{person.name}</h1>
+        {/* Contact line shown only on paper, where the action buttons are hidden. */}
+        <p className="print-only print-contact">
+          {person.email} · linkedin.com/in/mingmanhk · github.com/mingmanhk · {person.website}
+        </p>
         <p className="hero__lede">{person.lede}</p>
         <div className="hero__actions">
           <a className="button button--primary" href={`mailto:${person.email}`}>
             <Icon name="mail" size={18} /> Email Victor
           </a>
-          <a className="button" href={person.resumeUrl} target="_blank" rel="noopener noreferrer">
-            <Icon name="file" size={18} /> View résumé
+          <a className="button" href={person.resumeUrl} target="_blank" rel="noopener">
+            <Icon name="file" size={18} /> Résumé (PDF)
           </a>
           <a className="icon-button icon-button--outline" href={person.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
             <Icon name="linkedin" size={18} />

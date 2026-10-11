@@ -48,8 +48,8 @@ export default function Contact() {
           </a>
         </li>
         <li>
-          <a href={person.resumeUrl} target="_blank" rel="noopener noreferrer">
-            <Icon name="file" size={18} /> Résumé
+          <a href={person.resumeUrl} target="_blank" rel="noopener">
+            <Icon name="file" size={18} /> Résumé (PDF)
           </a>
         </li>
       </ul>

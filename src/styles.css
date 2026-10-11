@@ -1012,3 +1012,226 @@ main > section {
 .error-page p {
   color: var(--muted);
 }
+
+/* ------------------------------------------------------------------
+   Collapsed duties and print-only content
+------------------------------------------------------------------- */
+.role__extra,
+.print-only {
+  display: none;
+}
+
+/* ------------------------------------------------------------------
+   Print: the page becomes a two-page résumé. Interactive and decorative
+   parts are hidden; every role is expanded (see main.jsx beforeprint).
+------------------------------------------------------------------- */
+@page {
+  size: letter;
+  margin: 0.45in 0.55in;
+}
+
+@media print {
+  :root,
+  :root[data-theme="dark"] {
+    --paper: #ffffff;
+    --surface: #ffffff;
+    --ink: #111111;
+    --muted: #444444;
+    --line: #cccccc;
+    --evergreen: #1e5c4f;
+    --lake: #1e5c4f;
+    color-scheme: light;
+  }
+
+  html {
+    font-size: 9pt;
+  }
+
+  body {
+    background: #fff;
+    line-height: 1.32;
+  }
+
+  /* Name first, then title, then contact line. */
+  .hero__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-header,
+  .skip-link,
+  .hero__plan,
+  .hero__actions,
+  .hero__photo,
+  .highlights,
+  .role__chevron,
+  .text-button,
+  #projects,
+  #contact,
+  .site-footer {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  .role__extra {
+    display: list-item;
+  }
+
+  main > section {
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .hero {
+    display: block;
+    padding: 0 0 0.6rem;
+    border-bottom: 2px solid var(--evergreen);
+  }
+
+  .hero__id {
+    margin: 0;
+  }
+
+  .hero h1 {
+    font-size: 22pt;
+    margin: 0 0 0.1rem;
+    order: -1;
+  }
+
+  .hero__role {
+    font-size: 11pt;
+  }
+
+  .hero__role span {
+    display: inline;
+  }
+
+  .hero__role span::before {
+    content: ", ";
+  }
+
+  .print-contact {
+    margin: 0.2rem 0 0.5rem;
+    font-size: 9pt;
+    color: var(--muted);
+  }
+
+  .hero__lede {
+    font-size: 9.5pt;
+    max-width: none;
+    margin: 0;
+  }
+
+  .section {
+    padding-block: 0.7rem 0;
+    border-top: 0;
+  }
+
+  .section h2 {
+    font-size: 12pt;
+    margin-bottom: 0.4rem;
+    padding-bottom: 0.15rem;
+    border-bottom: 1px solid var(--line);
+    letter-spacing: 0;
+    break-after: avoid;
+  }
+
+  .timeline::before,
+  .role summary::before {
+    display: none;
+  }
+
+  .role details {
+    border-bottom: 0;
+  }
+
+  .role summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.35rem 0 0.1rem;
+    break-after: avoid;
+  }
+
+  .role__when {
+    order: 2;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  .role__head {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 0.4rem;
+    padding: 0;
+  }
+
+  .role__org {
+    font-size: 10.5pt;
+  }
+
+  .role__title::before {
+    content: "· ";
+  }
+
+  .role__body {
+    margin: 0;
+    padding: 0 0 0.3rem;
+    max-width: none;
+  }
+
+  .role__location {
+    display: none;
+  }
+
+  .role__body ul {
+    margin: 0.1rem 0 0;
+  }
+
+  .role__body li {
+    margin-bottom: 0.05rem;
+  }
+
+  .role {
+    break-inside: avoid-page;
+  }
+
+  .capabilities {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .capability h3,
+  .education__title {
+    font-size: 10pt;
+    padding-bottom: 0.15rem;
+    margin-bottom: 0.2rem;
+    border-bottom-width: 1px;
+  }
+
+  .capability li {
+    padding: 0.05rem 0;
+    border: 0;
+  }
+
+  .education__title {
+    margin-top: 0.5rem;
+    break-after: avoid;
+  }
+
+  .education {
+    break-inside: avoid;
+  }
+
+  .education {
+    gap: 0.1rem;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

@@ -7,7 +7,7 @@ const PREVIEW = 6;
 function Role({ job, defaultOpen }) {
   const [expanded, setExpanded] = useState(false);
   const hidden = job.duties.length - PREVIEW;
-  const duties = expanded || hidden <= 1 ? job.duties : job.duties.slice(0, PREVIEW);
+  const collapsible = hidden > 1;
 
   return (
     <li className="role">
@@ -24,12 +24,16 @@ function Role({ job, defaultOpen }) {
         </summary>
         <div className="role__body">
           <p className="role__location">{job.location}</p>
+          {/* Every duty is rendered so print and search engines get the full list;
+              extras are hidden on screen until "Show more". */}
           <ul>
-            {duties.map((duty) => (
-              <li key={duty}>{duty}</li>
+            {job.duties.map((duty, i) => (
+              <li key={duty} className={collapsible && !expanded && i >= PREVIEW ? "role__extra" : undefined}>
+                {duty}
+              </li>
             ))}
           </ul>
-          {hidden > 1 && (
+          {collapsible && (
             <button type="button" className="text-button" onClick={() => setExpanded((v) => !v)} aria-expanded={expanded}>
               {expanded ? "Show fewer" : `Show ${hidden} more`}
             </button>

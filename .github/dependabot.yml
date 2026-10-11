@@ -1,0 +1,20 @@
+version: 2
+updates:
+  # Weekly dependency updates, grouped into one PR so review stays light.
+  # Each PR runs the full quality gate before it can be merged.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: America/Los_Angeles
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
