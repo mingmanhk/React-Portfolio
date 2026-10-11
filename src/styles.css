@@ -1093,8 +1093,8 @@ main > section {
 
   html[data-print-density="compact"] .role,
   html[data-print-density="tight"] .role {
-    padding-top: 0.3rem;
-    margin-top: 0.3rem;
+    padding-top: 0.5rem;
+    margin-top: 0.55rem;
   }
 }
 
@@ -1109,6 +1109,10 @@ main > section {
     --evergreen: #1e5c4f;
     --lake: #1e5c4f;
     color-scheme: light;
+    /* Static TrueType font for the PDF. The variable web font is embedded by
+       Chromium as Type 3 glyphs, which several ATS parsers cannot read and
+       which drop word spaces in bold text ("Cityof Lakewood"). */
+    --font: "Liberation Sans", Arial, Helvetica, sans-serif;
   }
 
   html {
@@ -1227,9 +1231,9 @@ main > section {
   /* Employer block: company and dates on line one, title and location on line
      two, a rule between employers so each job reads as its own section. */
   .role {
-    padding-top: 0.45rem;
-    margin-top: 0.45rem;
-    border-top: 1px solid var(--line);
+    padding-top: 0.6rem;
+    margin-top: 0.7rem;
+    border-top: 1.5px solid var(--ink);
   }
 
   .role:first-child {

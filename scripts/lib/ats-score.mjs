@@ -1,4 +1,5 @@
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
+import { PDFDocument, PDFDict, PDFName } from "pdf-lib";
 import { person, experience, capabilities } from "../../src/data/profile.js";
 
 /**
@@ -32,6 +33,26 @@ const SECTIONS = [
 
 const MONTH = "(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)";
 const DATE_RANGE = new RegExp(`(${MONTH} \\d{4}|\\d{4}) – (${MONTH} \\d{4}|\\d{4}|Present)`);
+
+async function countType3Fonts(bytes) {
+  const doc = await PDFDocument.load(bytes, { updateMetadata: false });
+  let n = 0;
+  for (const [, obj] of doc.context.enumerateIndirectObjects()) {
+    if (obj instanceof PDFDict && obj.get(PDFName.of("Type")) === PDFName.of("Font") && obj.get(PDFName.of("Subtype")) === PDFName.of("Type3")) n++;
+  }
+  return n;
+}
+
+async function rawText(bytes) {
+  const doc = await getDocument({ data: new Uint8Array(bytes), useSystemFonts: true, disableFontFace: true }).promise;
+  let out = "";
+  for (let p = 1; p <= doc.numPages; p++) {
+    const content = await (await doc.getPage(p)).getTextContent({ disableNormalization: true });
+    // Concatenate glyph runs exactly as stored; no spaces added from positions.
+    out += content.items.map((i) => i.str ?? "").join("") + "\n";
+  }
+  return out;
+}
 
 export async function extract(bytes) {
   const doc = await getDocument({ data: new Uint8Array(bytes), useSystemFonts: true }).promise;
@@ -71,9 +92,21 @@ export async function scoreResume(bytes, { maxPages = 3 } = {}) {
   // 1. Text layer: a parser gets real, plentiful text.
   score("Text layer", 10, text.length >= 4000 ? 1 : text.length / 4000, `${text.length} characters extracted`);
 
-  // 2. Clean characters: ligatures, private-use glyphs, and replacement marks break keyword matching.
-  const bad = text.match(/[ﬀ-ﬆ-�]/g) || [];
-  score("Clean characters", 10, bad.length === 0 ? 1 : 0, bad.length ? `${bad.length} unreadable glyphs` : "no ligatures or unknown glyphs");
+  // 2. Clean characters and readable fonts. Ligatures, private-use glyphs, and
+  // replacement marks break keyword matching; Type 3 fonts (how Chromium embeds
+  // variable web fonts) are unreadable to several parsers and lose word spaces.
+  const bad = text.match(/[\uFB00-\uFB06\uE000-\uF8FF\uFFFD]/g) || [];
+  const type3 = await countType3Fonts(bytes);
+  // Raw stream text without position-inferred spaces, as simple parsers see it.
+  const raw = await rawText(bytes);
+  const glued = experience.filter((job) => job.org.includes(" ") && !raw.includes(job.org)).map((job) => job.org);
+  const clean = [
+    [bad.length === 0, bad.length ? `${bad.length} unreadable glyphs` : "no ligatures or unknown glyphs"],
+    [type3 === 0, type3 ? `${type3} Type 3 fonts` : "no Type 3 fonts"],
+    [glued.length === 0, glued.length ? `spaces lost in: ${glued.join(", ")}` : "word spaces intact"],
+  ];
+  score("Clean text and fonts", 10, clean.filter(([ok]) => ok).length / clean.length,
+    clean.map(([ok, label]) => `${ok ? "✓" : "✗"} ${label}`).join(", "));
 
   // 3. Contact block: name first, then email, LinkedIn, and location near the top.
   const top = lines.slice(0, 6).join(" ");
