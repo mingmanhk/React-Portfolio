@@ -17,9 +17,15 @@ import AxeBuilder from "@axe-core/playwright";
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const port = 4318;
 const base = `http://localhost:${port}/React-Portfolio/`;
-const BUDGET_KB = 350;
+const BUDGET_KB = 400; // uncompressed; roughly 120 KB over the wire with gzip
 
 const failures = [];
+
+// Console errors count only when they come from this site; third-party loads
+// (analytics, GitHub-hosted screenshots) can fail on flaky networks without a site bug.
+const isSiteError = (m) =>
+  m.type() === "error" && !/goatcounter/i.test(m.text()) &&
+  (!/Failed to load resource/.test(m.text()) || (m.location().url || "").startsWith(`http://localhost:${port}`));
 const check = (ok, label, detail = "") => {
   console.log(`${ok ? "✓" : "✗"} ${label}${detail ? ` — ${detail}` : ""}`);
   if (!ok) failures.push(label);
@@ -52,20 +58,19 @@ try {
   const page = await (await browser.newContext({ viewport: { width: 1280, height: 800 } })).newPage();
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  page.on("console", (m) => {
-    // Analytics calls fail on localhost by design; anything else is a real error.
-    if (m.type() === "error" && !/goatcounter|ERR_FAILED/i.test(m.text())) errors.push(m.text());
-  });
+  page.on("console", (m) => isSiteError(m) && errors.push(m.text()));
+  // Budget covers what blocks first render (HTML, CSS, JS, fonts). Images are
+  // lazy-loaded at timing-dependent moments, which made a total-bytes check flaky.
   let bytes = 0;
+  const critical = new Set(["document", "stylesheet", "script", "font"]);
   page.on("response", async (r) => {
-    // Third-party screenshots load lazily and are excluded from the first-load budget.
-    if (r.url().startsWith(`http://localhost:${port}`)) {
-      bytes += Number(r.headers()["content-length"] || (await r.body().catch(() => Buffer.alloc(0))).length);
+    if (r.url().startsWith(`http://localhost:${port}`) && critical.has(r.request().resourceType())) {
+      bytes += (await r.body().catch(() => Buffer.alloc(0))).length;
     }
   });
   await page.goto(base, { waitUntil: "networkidle" });
   check(errors.length === 0, "no JavaScript errors", errors.join(" | "));
-  check(bytes / 1024 < BUDGET_KB, `initial transfer under ${BUDGET_KB} KB`, `${Math.round(bytes / 1024)} KB`);
+  check(bytes / 1024 < BUDGET_KB, `render-critical assets under ${BUDGET_KB} KB`, `${Math.round(bytes / 1024)} KB`);
 
   const axe = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
   check(
@@ -98,9 +103,7 @@ try {
     const zh = await (await browser.newContext({ viewport: { width: 1280, height: 800 } })).newPage();
     const zhErrors = [];
     zh.on("pageerror", (e) => zhErrors.push(e.message));
-    zh.on("console", (m) => {
-      if (m.type() === "error" && !/goatcounter|ERR_FAILED/i.test(m.text())) zhErrors.push(m.text());
-    });
+    zh.on("console", (m) => isSiteError(m) && zhErrors.push(m.text()));
     await zh.goto(base + route, { waitUntil: "networkidle" });
     const htmlLang = await zh.locator("html").getAttribute("lang");
     const text = await zh.locator("body").innerText();

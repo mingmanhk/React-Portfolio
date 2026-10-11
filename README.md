@@ -46,7 +46,7 @@ Commit the updated PDF. Printing the live page from a browser produces the same 
 
 ## Quality checks
 
-Every push and pull request runs `npm run check` in CI before deploying: no JavaScript errors, no WCAG 2.1 AA violations (axe-core) in light and dark themes, no horizontal scroll at 320px, working theme toggle, plan tabs and project filter, required files served, and an initial-load budget of 350 KB. Dependabot opens grouped dependency updates weekly; each must pass the same checks.
+Every push and pull request runs `npm run check` in CI before deploying: no JavaScript errors, no WCAG 2.1 AA violations (axe-core) in light and dark themes, no horizontal scroll at 320px, working theme toggle, plan tabs and project filter, required files served, and a 400 KB (uncompressed) budget for render-critical HTML, CSS, JS, and fonts. Dependabot opens grouped dependency updates weekly; each must pass the same checks.
 
 ## Languages
 
