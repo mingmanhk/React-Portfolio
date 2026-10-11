@@ -100,7 +100,14 @@ export async function scoreResume(bytes, { maxPages = 3 } = {}) {
   // Raw stream text without position-inferred spaces, as simple parsers see it.
   const raw = await rawText(bytes);
   const glued = experience.filter((job) => job.org.includes(" ") && !raw.includes(job.org)).map((job) => job.org);
+  // Standard "•" bullets in the text itself, one per duty, and no middle dots
+  // (OCR-based parsers misread "·" as a period and split phrases).
+  const duties = experience.reduce((n, job) => n + (job.groups || []).reduce((m, g) => m + g.duties.length, 0) + (job.duties || []).length, 0);
+  const bullets = (text.match(/^•/gm) || []).length;
+  const middots = (text.match(/\u00B7/g) || []).length;
   const clean = [
+    [bullets >= duties, `${bullets}/${duties} bullets as "•" text`],
+    [middots === 0, middots ? `${middots} middle-dot separators` : "ATS-safe separators"],
     [bad.length === 0, bad.length ? `${bad.length} unreadable glyphs` : "no ligatures or unknown glyphs"],
     [type3 === 0, type3 ? `${type3} Type 3 fonts` : "no Type 3 fonts"],
     [glued.length === 0, glued.length ? `spaces lost in: ${glued.join(", ")}` : "word spaces intact"],

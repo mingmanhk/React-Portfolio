@@ -711,6 +711,11 @@ main > section {
   color: var(--evergreen);
 }
 
+/* Separator drawn in CSS so print can swap it for an ATS-safe pipe. */
+.role__loc::before {
+  content: " · ";
+}
+
 @media (max-width: 760px) {
   .timeline::before {
     left: 5px;
@@ -1311,12 +1316,29 @@ main > section {
 
   .role__body ul {
     margin: 0.1rem 0 0;
-    padding-left: 1rem;
-    list-style: disc;
+    padding-left: 0.2rem;
+    list-style: none;
   }
 
+  /* Real "•" characters in the text layer. List markers are drawn as
+     graphics that some parsers OCR as commas or drop entirely. */
   .role__body li {
     margin-bottom: 0.05rem;
+    list-style: none;
+    padding-left: 0.85em;
+    text-indent: -0.85em;
+  }
+
+  .role__body li::before {
+    content: "•";
+    display: inline-block;
+    width: 0.85em;
+    text-indent: 0;
+    color: var(--ink);
+  }
+
+  .role__loc::before {
+    content: " | ";
   }
 
   .role__scope {
@@ -1380,8 +1402,10 @@ main > section {
     gap: 0 0.3rem;
   }
 
+  /* Pipes, not middle dots: OCR-based parsers read "·" as a period and
+     split skills mid-phrase. Commas would collide with commas inside items. */
   .capability li + li::before {
-    content: "· ";
+    content: " | ";
     color: var(--muted);
   }
 

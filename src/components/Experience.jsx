@@ -31,7 +31,7 @@ function Role({ job, defaultOpen }) {
             <span className="role__org">{job.org}</span>
             <span className="role__title">
               {job.title}
-              <span className="role__loc"> · {job.location}</span>
+              <span className="role__loc">{job.location}</span>
             </span>
           </span>
           <Icon name="chevron" className="role__chevron" size={18} />
