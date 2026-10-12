@@ -24,7 +24,7 @@ export default function Capabilities() {
           <li key={e.name}>
             <span className="education__name">{e.name}</span>
             <span className="education__meta">
-              {e.school}, {e.years}
+              {e.school}
             </span>
           </li>
         ))}

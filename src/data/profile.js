@@ -426,10 +426,12 @@ export const projects = [
   },
 ];
 
+// Graduation years omitted on purpose: they invite age-based screening and add
+// nothing for a senior role.
 export const education = [
-  { name: "M.S., Computer Information Technology Systems", school: "University of Houston", years: "2011–2013" },
-  { name: "B.S., Computer Science, minor in Management", school: "Dallas Baptist University", years: "2002–2005" },
-  { name: "Full-Stack Coding Boot Camp", school: "University of Washington", years: "2023" },
+  { name: "M.S., Computer Information Technology Systems", school: "University of Houston" },
+  { name: "B.S., Computer Science, minor in Management", school: "Dallas Baptist University" },
+  { name: "Full-Stack Coding Boot Camp", school: "University of Washington" },
 ];
 
 export const ventures = [
