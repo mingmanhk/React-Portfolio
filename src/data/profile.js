@@ -3,6 +3,8 @@ import taskinImg from "../assets/taskin.webp";
 import screenGrabberIcon from "../assets/screengrabber-icon.webp";
 import contactSyncMateIcon from "../assets/contact-syncmate-icon.webp";
 import habitronIcon from "../assets/habitron-icon.webp";
+import deepTickerImg from "../assets/deepticker.webp";
+import w1itImg from "../assets/w1it.webp";
 
 export const person = {
   name: "Victor Lam",
@@ -317,12 +319,11 @@ const raw = (repo, path) => `https://github.com/${repo}/raw/${path}`;
 
 export const projects = [
   {
-    name: "Pixel Color Pick",
+    name: "W1IT Solutions",
     type: "product",
-    summary: "An open-source macOS color picker with a screen-wide eyedropper, one-click HEX, RGB, and HSL copy, and color history. Built with Swift and SwiftUI.",
-    img: pixelColorPickImg,
-    repo: "https://github.com/mingmanhk/PixelColorPick",
-    live: { href: "https://apps.apple.com/us/app/pixel-color-pick/id6754412788?mt=12", label: "App Store" },
+    summary: "The IT consulting and managed services brand I founded: network architecture, cybersecurity assessments, and cloud solutions for small businesses.",
+    img: w1itImg,
+    live: { href: "https://w1it.com/", label: "w1it.com" },
   },
   {
     name: "Taskin",
@@ -330,6 +331,14 @@ export const projects = [
     summary: "Home for my Mac apps and a free, no-signup online toolkit: QR codes, background removal, image compression, passport photos, file conversion, and AI stock analysis.",
     img: taskinImg,
     live: { href: "https://taskin.app/", label: "taskin.app" },
+  },
+  {
+    name: "Pixel Color Pick",
+    type: "product",
+    summary: "An open-source macOS color picker with a screen-wide eyedropper, one-click HEX, RGB, and HSL copy, and color history. Built with Swift and SwiftUI.",
+    img: pixelColorPickImg,
+    repo: "https://github.com/mingmanhk/PixelColorPick",
+    live: { href: "https://apps.apple.com/us/app/pixel-color-pick/id6754412788?mt=12", label: "App Store" },
   },
   {
     name: "ScreenGrabber",
@@ -351,7 +360,7 @@ export const projects = [
     name: "DeepTicker",
     type: "product",
     summary: "A privacy-focused iOS portfolio tracker with AI market insights from your choice of model provider. Built with Swift and SwiftUI; data stays on the device.",
-    img: raw("mingmanhk/DeepTicker", "master/Screenshots/Screenshot%20-%20My%20Investment.png"),
+    img: deepTickerImg,
     repo: "https://github.com/mingmanhk/DeepTicker",
   },
   {

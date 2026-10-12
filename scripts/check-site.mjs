@@ -9,7 +9,7 @@ import AxeBuilder from "@axe-core/playwright";
  * - page renders with no JavaScript errors
  * - no WCAG 2.1 AA accessibility violations (axe-core)
  * - no horizontal overflow on a 320px phone
- * - key interactions work (theme toggle, plan tabs, project filter)
+ * - key interactions work (theme toggle, plan tabs, earlier-work toggle)
  * - résumé PDF, sitemap, and privacy page are served
  * - initial transfer stays under a size budget
  * Exits non-zero on any failure so CI blocks the deploy.
@@ -86,8 +86,9 @@ try {
   await page.getByRole("tab", { name: "One Login" }).click();
   check((await page.locator(".netmap__caption").innerText()).includes("identity"), "plan tabs update the caption");
 
-  await page.getByRole("button", { name: /^Products/ }).click();
-  check((await page.locator(".project").count()) === 5, "project filter works");
+  check((await page.locator("#projects > .projects > .project").count()) === 6, "six shipped products lead the projects section");
+  await page.locator(".earlier > summary").click();
+  check((await page.locator(".earlier .project").first().isVisible()), "earlier coding work expands");
 
   // Dark theme contrast.
   const dark = await (await browser.newContext({ colorScheme: "dark" })).newPage();

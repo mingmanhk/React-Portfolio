@@ -866,6 +866,32 @@ main > section {
   object-position: top;
 }
 
+.earlier {
+  margin-top: 2rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
+.earlier > summary {
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0;
+}
+
+.earlier > summary:hover,
+.earlier[open] > summary {
+  color: var(--ink);
+}
+
+.earlier__note {
+  color: var(--muted);
+  margin: 0.25rem 0 1rem;
+}
+
 .project__media--icon {
   display: grid;
   place-items: center;

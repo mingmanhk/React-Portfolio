@@ -39,9 +39,11 @@ function ProjectCard({ project }) {
 }
 
 export default function Projects() {
-  const { projects, projectTypes, ui } = useContent();
-  const [type, setType] = useState("all");
-  const shown = type === "all" ? projects : projects.filter((p) => p.type === type);
+  const { projects, ui } = useContent();
+  // Shipped products lead; boot camp work stays available but collapsed so it
+  // doesn't dilute an executive profile.
+  const featured = projects.filter((p) => p.type === "product");
+  const earlier = projects.filter((p) => p.type !== "product");
 
   return (
     <section id="projects" className="section" aria-labelledby="projects-title">
@@ -50,23 +52,23 @@ export default function Projects() {
         <p>{ui.projectsLede}</p>
       </div>
 
-      <div className="filters" role="group" aria-label={ui.filterLabel}>
-        {projectTypes.map((t) => (
-          <button key={t.id} type="button" className="chip" aria-pressed={type === t.id} onClick={() => setType(t.id)}>
-            {t.label}
-            <span className="chip__count">
-              {t.id === "all" ? projects.length : projects.filter((p) => p.type === t.id).length}
-            </span>
-          </button>
-        ))}
-      </div>
-
-      <p className="visually-hidden" aria-live="polite">{ui.shown(shown.length)}</p>
       <ul className="projects">
-        {shown.map((p) => (
+        {featured.map((p) => (
           <ProjectCard key={p.name} project={p} />
         ))}
       </ul>
+
+      <details className="earlier">
+        <summary>
+          {ui.earlierWork} <span className="chip__count">{earlier.length}</span>
+        </summary>
+        <p className="earlier__note">{ui.earlierNote}</p>
+        <ul className="projects">
+          {earlier.map((p) => (
+            <ProjectCard key={p.name} project={p} />
+          ))}
+        </ul>
+      </details>
     </section>
   );
 }
