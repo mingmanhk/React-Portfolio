@@ -24,6 +24,12 @@ const port = 4317;
 const args = process.argv.slice(2);
 const minScore = Number(args.includes("--min") ? args[args.indexOf("--min") + 1] : 100);
 const alsoTo = args.includes("--copy-to") ? path.resolve(root, args[args.indexOf("--copy-to") + 1]) : null;
+// Private application copy: RESUME_PHONE / RESUME_ADDRESS come from the
+// environment only, so personal contact details never enter the repo, and
+// --out writes outside public/ so the copy is never deployed.
+const privateOut = args.includes("--out") ? path.resolve(args[args.indexOf("--out") + 1]) : null;
+const phone = process.env.RESUME_PHONE || "";
+const address = process.env.RESUME_ADDRESS || "";
 
 // Ordered most to least readable; each maps to html[data-print-density] in styles.css.
 const CANDIDATES = ["standard", "compact", "tight"];
@@ -72,6 +78,15 @@ try {
   // Open every role so the PDF carries the full history, as beforeprint does in browsers.
   await page.evaluate(() => document.querySelectorAll("details").forEach((d) => (d.open = true)));
   await page.emulateMedia({ media: "print", colorScheme: "light" });
+  if (phone || address) {
+    await page.evaluate(({ phone, address }) => {
+      const el = document.querySelector(".print-contact");
+      const parts = el.textContent.split(" | ");
+      if (address) parts[0] = address; // replaces the city-only location
+      if (phone) parts.splice(1, 0, phone);
+      el.textContent = parts.join(" | ");
+    }, { phone, address });
+  }
 
   const scored = [];
   for (const density of CANDIDATES) {
@@ -88,9 +103,10 @@ try {
     console.error(`✗ Best layout "${best.density}" scored ${best.total} / 100, below the required ${minScore}. PDF not written.`);
     process.exit(1);
   }
-  fs.writeFileSync(out, best.bytes);
-  if (alsoTo) fs.writeFileSync(alsoTo, best.bytes);
-  console.log(`✓ Résumé PDF written to ${path.relative(root, out)}: "${best.density}" layout, ATS ${best.total} / 100, ${best.pages} pages, ${Math.round(best.bytes.length / 1024)} KB`);
+  const target = privateOut || out;
+  fs.writeFileSync(target, best.bytes);
+  if (alsoTo && !privateOut) fs.writeFileSync(alsoTo, best.bytes);
+  console.log(`✓ Résumé PDF written to ${privateOut || path.relative(root, out)}: "${best.density}" layout, ATS ${best.total} / 100, ${best.pages} pages, ${Math.round(best.bytes.length / 1024)} KB`);
 } finally {
   preview.kill();
 }

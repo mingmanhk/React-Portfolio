@@ -95,3 +95,6 @@ tmp/
 
 # Temporary server-render bundle used by scripts/prerender.mjs
 /build-ssr
+
+# Private application résumés (phone/address) must never be committed.
+*-private.pdf
