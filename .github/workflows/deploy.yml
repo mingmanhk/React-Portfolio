@@ -112,7 +112,7 @@ jobs:
       - name: Download the deployed résumé
         run: curl -sSf -o resume.pdf https://mingmanhk.github.io/React-Portfolio/victor-lam-resume.pdf
       - run: node --import ./scripts/lib/asset-stub.mjs scripts/ai-resume-review.mjs --pdf resume.pdf
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: resume-review
           path: review.json
