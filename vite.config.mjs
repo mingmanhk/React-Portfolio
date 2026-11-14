@@ -45,7 +45,9 @@ export default defineConfig(({ mode }) => {
               "<!--CSP-->",
               `<meta http-equiv="Content-Security-Policy" content="${contentSecurityPolicy(env)}">`
             )
-            .replace("<!--GSC-->", gsc ? `<meta name="google-site-verification" content="${gsc}">` : "");
+            .replace("<!--GSC-->", gsc ? `<meta name="google-site-verification" content="${gsc}">` : "")
+            // ProfilePage.dateModified tracks each deploy so search engines see fresh content.
+            .replace("__BUILD_DATE__", new Date().toISOString().slice(0, 10));
         },
       },
     ],

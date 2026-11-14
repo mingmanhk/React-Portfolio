@@ -13,7 +13,7 @@ function ProjectCard({ project }) {
             <Icon name="code" size={32} />
           </span>
         ) : (
-          <img src={project.img} alt={project.icon ? ui.appIcon(project.name) : ui.screenshot(project.name)} loading="lazy" decoding="async" onError={() => setImgFailed(true)} />
+          <img src={project.img} alt={project.icon ? ui.appIcon(project.name) : ui.screenshot(project.name)} width={project.icon ? 256 : 960} height={project.icon ? 256 : 600} loading="lazy" decoding="async" onError={() => setImgFailed(true)} />
         )}
       </div>
       <div className="project__body">

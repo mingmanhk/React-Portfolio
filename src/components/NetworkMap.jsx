@@ -113,8 +113,11 @@ export default function NetworkMap() {
         })}
       </svg>
 
-      <figcaption id={`${baseId}-panel`} role="tabpanel" aria-labelledby={`${baseId}-tab-${activeId}`} className="netmap__caption" aria-live="polite">
-        {active.summary}
+      {/* figcaption may not carry role="tabpanel", so the panel is an inner div. */}
+      <figcaption className="netmap__caption">
+        <div id={`${baseId}-panel`} role="tabpanel" aria-labelledby={`${baseId}-tab-${activeId}`} aria-live="polite">
+          {active.summary}
+        </div>
       </figcaption>
     </figure>
   );

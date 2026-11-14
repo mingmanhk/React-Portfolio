@@ -41,7 +41,7 @@ function Role({ job, defaultOpen }) {
           {job.groups ? (
             job.groups.map((g) => (
               <div key={g.theme} className="role__group">
-                <h4 className="role__theme">{g.theme}</h4>
+                <h3 className="role__theme">{g.theme}</h3>
                 <DutyList duties={g.duties} />
               </div>
             ))
