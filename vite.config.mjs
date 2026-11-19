@@ -53,7 +53,8 @@ export default defineConfig(({ mode }) => {
             )
             .replace("<!--GSC-->", gsc ? `<meta name="google-site-verification" content="${gsc}">` : "")
             // ProfilePage.dateModified tracks each deploy so search engines see fresh content.
-            .replace("__BUILD_DATE__", new Date().toISOString().slice(0, 10));
+            // Google's ProfilePage validator requires a full ISO 8601 datetime, not a bare date.
+            .replace("__BUILD_DATE__", new Date().toISOString().replace(/\.\d{3}Z$/, "Z"));
         },
       },
     ],

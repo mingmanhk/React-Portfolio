@@ -27,7 +27,6 @@ function initGoogleAnalytics() {
   window.dataLayer = window.dataLayer || [];
   window.gtag = function gtag() {
     // gtag.js expects the arguments object itself, not an array copy.
-    // eslint-disable-next-line prefer-rest-params
     window.dataLayer.push(arguments);
   };
   window.gtag("js", new Date());
