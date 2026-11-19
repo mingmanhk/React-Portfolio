@@ -84,7 +84,9 @@ Page views are counted with GoatCounter (site code `mingmanhk`, set in [`.env.pr
 - The footer shows total page views when **Allow adding visitor counts on your website** is enabled in GoatCounter settings.
 - To turn analytics off, empty `VITE_GOATCOUNTER_CODE` and redeploy; the CSP then blocks GoatCounter entirely.
 
-GoatCounter sets no cookies and collects no personal data, so no consent banner is needed. See [`public/privacy-policy.html`](public/privacy-policy.html).
+Google Analytics 4 (measurement ID `G-0PLTDJ7KYX`, set as `VITE_GA_MEASUREMENT_ID` in [`.env.production`](.env.production)) adds audience and acquisition reports. It is loaded from `src/analytics.js`, not Google's inline snippet, so the CSP stays free of inline scripts. Google Signals and ad personalization are off. Empty the variable and redeploy to remove GA and its CSP origins.
+
+GoatCounter sets no cookies. GA4 sets first-party cookies; both are disclosed in the privacy policy. See [`public/privacy-policy.html`](public/privacy-policy.html).
 
 ## Security
 

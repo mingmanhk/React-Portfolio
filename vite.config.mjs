@@ -9,13 +9,19 @@ import react from "@vitejs/plugin-react";
 export function contentSecurityPolicy(env) {
   const code = env.VITE_GOATCOUNTER_CODE?.trim();
   const counter = code ? `https://${code}.goatcounter.com` : "";
+  // Origins Google documents for GA4 under a CSP; only allowed when GA is configured.
+  const ga = Boolean(env.VITE_GA_MEASUREMENT_ID?.trim());
+  const gaScript = ga ? ["https://*.googletagmanager.com"] : [];
+  const gaBeacons = ga
+    ? ["https://*.google-analytics.com", "https://*.analytics.google.com", "https://*.googletagmanager.com"]
+    : [];
   const directives = {
     "default-src": ["'self'"],
-    "script-src": ["'self'", code && "https://gc.zgo.at"],
+    "script-src": ["'self'", code && "https://gc.zgo.at", ...gaScript],
     "style-src": ["'self'"],
-    "img-src": ["'self'", "data:", "https://github.com", "https://*.githubusercontent.com", counter],
+    "img-src": ["'self'", "data:", "https://github.com", "https://*.githubusercontent.com", counter, ...gaBeacons],
     "font-src": ["'self'"],
-    "connect-src": ["'self'", counter],
+    "connect-src": ["'self'", counter, ...gaBeacons],
     "object-src": ["'none'"],
     "base-uri": ["'self'"],
     "form-action": ["'none'"],
